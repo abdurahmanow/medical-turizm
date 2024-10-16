@@ -10,7 +10,7 @@ body {
 header {
     position: fixed;
     top: 20px; /* Отступ сверху */
-    width: calc(100% - 160px); /* Учитываем отступы по 100px с каждой стороны */
+    width: calc(100% - 160px); /* Учитываем отступы по 80px с каждой стороны */
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding: 15px 0;

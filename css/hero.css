@@ -1,38 +1,35 @@
 /* Основной стиль для секции */
 .hero-section {
     background-color: #3155d6; /* Синий фон */
-    border-radius: 40px 40px 40px 40px; /* Скругленные углы */
-    padding: 40px 20px;
-    margin-top: 90px; /* Отступ сверху, чтобы секция находилась под шапкой меню */
-    margin-bottom: 50px; /* Добавлен отступ снизу */
-    max-width: 1200px; /* Ограничение по ширине */
-    margin-left: auto; /* Центрирование секции */
-    margin-right: auto; /* Центрирование секции */
-    text-align: left; /* Выравнивание текста по левому краю */
+    border-radius: 35px 40px 35px 40px; /* Скругленные углы */
+    padding: 40px 30px; /* Внутренний отступ для всего контейнера */
+    margin-top: 100px; /* Отступ сверху */
+    margin-bottom: 50px; /* Отступ снизу */
+    max-width: calc(100% - 100px); /* Полная ширина экрана минус внешний отступ по 30px с каждой стороны */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Текст по левому краю */
     color: #fff;
+    box-sizing: border-box;
+    padding-left: 30px; /* Внутренний отступ текста слева */
+    padding-right: 30px; /* Внутренний отступ текста справа */
 }
 
 /* Стиль для заголовка */
 .hero-section h1 {
-    font-size: 2.5em;
+    font-size: 3vw; /* Относительный размер шрифта */
     font-weight: bold;
     margin-bottom: 20px;
-    max-width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left; /* Выравнивание заголовка по левому краю */
-    padding-left: 30px; /* Отступ от левого края */
+    max-width: 100%; /* Текст занимает всю ширину контейнера */
+    text-align: left; /* Выравнивание по левому краю */
 }
 
 /* Стиль для описания */
 .hero-section p {
-    font-size: 1.2em;
+    font-size: 1.5vw; /* Относительный размер шрифта */
     margin-bottom: 40px;
-    max-width: max-content;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%; /* Текст занимает всю ширину контейнера */
     text-align: left; /* Выравнивание по левому краю */
-    padding-left: 30px; /* Отступ от левого края */
 }
 
 /* Кнопка CTA */
@@ -45,7 +42,6 @@
     font-size: 1.2em;
     margin-bottom: 40px;
     display: inline-block;
-    margin-left: 30px; /* Отступ слева для кнопки */
 }
 
 .cta-button:hover {
@@ -71,34 +67,76 @@
 /* Сетка иконок */
 .icons-wrapper {
     display: flex;
+    flex-wrap: wrap; /* Перенос на следующую строку */
     justify-content: center;
-    gap: 30px;
+    gap: 15px; /* Расстояние между карточками */
+    max-width: 100%; /* Ограничение ширины, как у текста */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px; /* Отступы, чтобы карточки не прилипали к краям */
 }
 
+/* Иконка преимущества */
 .icon {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    color: #000;
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid #fff; /* Белый контур */
+    padding: 5px 10px; /* Отступы внутри карточки */
+    border-radius: 10px; /* Закругленные углы */
+    color: #fff; /* Белый текст */
     text-align: center;
-    font-size: 0.9em;
-    max-width: 150px;
+    font-size: 1em; /* Уменьшаем размер текста */
+    flex: 0 1 auto; /* Карточка занимает только необходимую ширину */
+    box-sizing: border-box; /* Учитываем отступы */
+    min-width: max-content; /* Минимальная ширина для текста */
+    max-width: 250px; /* Максимальная ширина, чтобы текст не растягивался слишком сильно */
+    word-wrap: break-word; /* Перенос слов при необходимости */
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .icons-wrapper {
+        justify-content: center;
+        gap: 10px; /* Меньший отступ между карточками на мобильных */
+    }
+
+    .icon {
+        font-size: 0.9em; /* Еще уменьшаем шрифт для мобильных */
+        max-width: 180px; /* Уменьшаем максимальную ширину для мобильных */
+    }
 }
 
 /* Ограничение ширины и центрирование на мобильных */
 @media (max-width: 1200px) {
     .hero-section {
-        padding: 40px 20px;
+        padding: 40px 20px; /* Внутренний отступ */
+        max-width: calc(100% - 40px); /* Внешний отступ уменьшается до 20px */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5vw; /* Уменьшаем шрифт на средних экранах */
+    }
+
+    .hero-section p {
+        font-size: 1.3vw; /* Уменьшаем шрифт на средних экранах */
     }
 }
 
 @media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 10px; /* Внутренний отступ для мобильных */
+        max-width: calc(100% - 16px); /* Внешний отступ 8px с каждой стороны */
+    }
+
     .hero-section h1 {
-        font-size: 1.8em;
+        font-size: 5vw; /* Уменьшаем шрифт на маленьких экранах */
+    }
+
+    .hero-section p {
+        font-size: 3vw; /* Уменьшаем шрифт на маленьких экранах */
     }
 
     .images-wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Размещаем картинки в колонку на мобильных */
     }
 
     .rounded-image {
