@@ -1,0 +1,80 @@
+/* Основные стили для сайта */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Нежно-серый фон */
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для меню */
+header {
+    position: fixed;
+    top: 20px; /* Отступ сверху */
+    width: calc(100% - 160px); /* Учитываем отступы по 100px с каждой стороны */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    margin: 0 80px; /* Отступы слева и справа */
+    border-radius: 15px; /* Закругление краев */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для приподнятости */
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+/* Контейнер для логотипа и контактов */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px; /* Отступы внутри контейнера: 50px слева и справа */
+}
+
+/* Логотип */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Контакты и кнопка */
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.contacts span {
+    margin-right: 10px;
+}
+
+#contact-button {
+    background-color: #ADD8E6;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact-button:hover {
+    background-color: #87CEEB;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    header {
+        margin: 0; /* Убираем отступы на маленьких экранах */
+        width: 100%;
+        border-radius: 0; /* Убираем закругления */
+    }
+
+    .container {
+        padding: 0 20px; /* Уменьшаем отступы внутри контейнера на мобильных экранах */
+    }
+
+    .contacts {
+        display: none;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,116 @@
+/* Основной стиль для секции */
+.hero-section {
+    background-color: #3155d6; /* Синий фон */
+    border-radius: 40px 40px 40px 40px; /* Скругленные углы */
+    padding: 40px 20px;
+    margin-top: 90px; /* Отступ сверху, чтобы секция находилась под шапкой меню */
+    margin-bottom: 50px; /* Добавлен отступ снизу */
+    max-width: 1200px; /* Ограничение по ширине */
+    margin-left: auto; /* Центрирование секции */
+    margin-right: auto; /* Центрирование секции */
+    text-align: left; /* Выравнивание текста по левому краю */
+    color: #fff;
+}
+
+/* Стиль для заголовка */
+.hero-section h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Выравнивание заголовка по левому краю */
+    padding-left: 30px; /* Отступ от левого края */
+}
+
+/* Стиль для описания */
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Выравнивание по левому краю */
+    padding-left: 30px; /* Отступ от левого края */
+}
+
+/* Кнопка CTA */
+.cta-button {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    display: inline-block;
+    margin-left: 30px; /* Отступ слева для кнопки */
+}
+
+.cta-button:hover {
+    background-color: #444;
+}
+
+/* Обертка для картинок */
+.images-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Картинки с закругленными углами */
+.rounded-image {
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+    transform: rotate(-3deg); /* Наклон картинок */
+}
+
+/* Сетка иконок */
+.icons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.icon {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    color: #000;
+    text-align: center;
+    font-size: 0.9em;
+    max-width: 150px;
+}
+
+/* Ограничение ширины и центрирование на мобильных */
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+    .images-wrapper {
+        flex-direction: column;
+    }
+
+    .rounded-image {
+        width: 100px;
+    }
+
+    .icons-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .icon {
+        max-width: 90%;
+    }
+}

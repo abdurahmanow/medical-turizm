@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Tourism</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/hero.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">MedicalTourism</div>
+            <div class="contacts" id="contacts">
+                <span>+123 456 789</span>
+                <button id="contact-button">Связаться</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Добавляем pop-up прямо в страницу -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Оставить заявку</h2>
+            <form id="contact-form">
+                <!-- Поле для имени с плавающей меткой -->
+                <div class="field-wrapper">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" placeholder="Имя" maxlength="50">
+                </div>
+                
+                <div class="field-wrapper phone-wrapper">
+                    <label for="phone">Номер</label>
+                    <span class="phone-prefix">+38</span>
+                    <input type="tel" id="phone" placeholder="0XX XXX XXXX" maxlength="10" required>
+                </div>
+    
+                <!-- Поле для направления с плавающей меткой -->
+                <div class="field-wrapper">
+                    <label for="direction">Направление</label>
+                    <select id="direction" required>
+                        <option value="">Направление</option>
+                        <option value="option1">Опция 1</option>
+                        <option value="option2">Опция 2</option>
+                        <option value="option3">Опция 3</option>
+                    </select>
+                </div>
+    
+                <!-- Поле для комментария с плавающей меткой -->
+                <div class="field-wrapper">
+                    <label for="comment">Комментарий</label>
+                    <textarea id="comment" name="comment" rows="4"></textarea>
+                </div>
+    
+                <button id="submitBtn" disabled>Отправить</button>
+            </form>
+        </div>
+    </div>
+      
+    <!-- Изображение под шапкой -->
+    <section class="hero-section">
+        <div class="content-wrapper">
+            <h1>Real Med — организация и полное сопровождение лечения в лучших клиниках Турции</h1>
+            <p>Мы эксперты в сфере медицинского туризма в Турции. Мы сотрудничаем с передовыми клиниками и врачами мирового уровня, чтобы предоставить вам эффективное лечение и результат.</p>
+            <a href="#contact" class="cta-button">Бесплатная консультация</a>
+        </div>
+    
+        <!--<div class="images-wrapper">
+            <img src="image1.jpg" alt="Image 1" class="rounded-image">
+            <img src="image2.jpg" alt="Image 2" class="rounded-image">
+            <img src="image3.jpg" alt="Image 3" class="rounded-image">
+            <img src="image4.jpg" alt="Image 4" class="rounded-image">
+        </div>-->
+    
+        <div class="icons-wrapper">
+            <div class="icon">
+                <p>совмещение лечения и отдыха</p>
+            </div>
+            <div class="icon">
+                <p>врачи из Турции, Европы и СНГ</p>
+            </div>
+            <div class="icon">
+                <p>опыт более 4 лет</p>
+            </div>
+            <div class="icon">
+                <p>более 1000 клиентов</p>
+            </div>
+            <div class="icon">
+                <p>под ключ или отдельные услуги</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="js/script.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>
