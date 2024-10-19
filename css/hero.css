@@ -1,35 +1,35 @@
 /* Основной стиль для секции */
 .hero-section {
     background-color: #3155d6; /* Синий фон */
-    border-radius: 35px 40px 35px 40px; /* Скругленные углы */
-    padding: 40px 30px; /* Внутренний отступ для всего контейнера */
-    margin-top: 100px; /* Отступ сверху */
-    margin-bottom: 50px; /* Отступ снизу */
-    max-width: calc(100% - 100px); /* Полная ширина экрана минус внешний отступ по 30px с каждой стороны */
+    border-radius: 40px; /* Скругленные углы */
+    padding: 40px 60px; /* Внешние отступы: 40px сверху и снизу, 60px справа и слева */
+    margin-top: 115px; /* Отступ сверху */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    text-align: left; /* Текст по левому краю */
     color: #fff;
-    box-sizing: border-box;
-    padding-left: 30px; /* Внутренний отступ текста слева */
-    padding-right: 30px; /* Внутренний отступ текста справа */
+    text-align: left; /* Выравнивание текста по левому краю */
+    box-sizing: border-box; /* Учитываем padding и margin */
 }
 
 /* Стиль для заголовка */
 .hero-section h1 {
-    font-size: 3vw; /* Относительный размер шрифта */
+    font-size: 2.2em; /* Уменьшили размер заголовка */
     font-weight: bold;
     margin-bottom: 20px;
-    max-width: 100%; /* Текст занимает всю ширину контейнера */
-    text-align: left; /* Выравнивание по левому краю */
+    max-width: 800px;
+    line-height: 1.2; /* Улучшение межстрочного расстояния */
+    padding-left: 15px; /* Внутренний отступ для заголовка */
+    padding-right: 15px;
 }
 
 /* Стиль для описания */
 .hero-section p {
-    font-size: 1.5vw; /* Относительный размер шрифта */
+    font-size: 1.1em; /* Уменьшили размер текста описания */
     margin-bottom: 40px;
-    max-width: 100%; /* Текст занимает всю ширину контейнера */
-    text-align: left; /* Выравнивание по левому краю */
+    max-width: 600px;
+    padding-left: 15px; /* Внутренние отступы для параграфа */
+    padding-right: 15px;
 }
 
 /* Кнопка CTA */
@@ -40,115 +40,61 @@
     border-radius: 30px;
     text-decoration: none;
     font-size: 1.2em;
-    margin-bottom: 40px;
     display: inline-block;
-}
-
-.cta-button:hover {
-    background-color: #444;
-}
-
-/* Обертка для картинок */
-.images-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-/* Картинки с закругленными углами */
-.rounded-image {
-    width: 120px;
-    height: auto;
-    border-radius: 15px;
-    transform: rotate(-3deg); /* Наклон картинок */
+    margin-left: 15px; /* Отступ слева для кнопки */
+    margin-bottom: 40px; /* Добавили нижний отступ для кнопки */
 }
 
 /* Сетка иконок */
 .icons-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Перенос на следующую строку */
-    justify-content: center;
-    gap: 15px; /* Расстояние между карточками */
-    max-width: 100%; /* Ограничение ширины, как у текста */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px; /* Отступы, чтобы карточки не прилипали к краям */
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Выравнивание иконок по левому краю */
+    gap: 15px; /* Расстояние между иконками */
+    max-width: 100%;
+    margin-left: 15px; /* Отступы слева и справа для иконок */
+    margin-right: 15px;
 }
 
 /* Иконка преимущества */
 .icon {
     background-color: transparent; /* Прозрачный фон */
     border: 1px solid #fff; /* Белый контур */
-    padding: 5px 10px; /* Отступы внутри карточки */
-    border-radius: 10px; /* Закругленные углы */
-    color: #fff; /* Белый текст */
+    padding: 5px 15px; /* Отступы внутри иконки */
+    border-radius: 30px;
+    color: #fff;
     text-align: center;
-    font-size: 1em; /* Уменьшаем размер текста */
+    font-size: 1em; /* Размер текста */
     flex: 0 1 auto; /* Карточка занимает только необходимую ширину */
-    box-sizing: border-box; /* Учитываем отступы */
-    min-width: max-content; /* Минимальная ширина для текста */
-    max-width: 250px; /* Максимальная ширина, чтобы текст не растягивался слишком сильно */
+    box-sizing: border-box;
+    min-width: max-content;
     word-wrap: break-word; /* Перенос слов при необходимости */
 }
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
-    .icons-wrapper {
-        justify-content: center;
-        gap: 10px; /* Меньший отступ между карточками на мобильных */
-    }
-
-    .icon {
-        font-size: 0.9em; /* Еще уменьшаем шрифт для мобильных */
-        max-width: 180px; /* Уменьшаем максимальную ширину для мобильных */
-    }
-}
-
-/* Ограничение ширины и центрирование на мобильных */
-@media (max-width: 1200px) {
     .hero-section {
-        padding: 40px 20px; /* Внутренний отступ */
-        max-width: calc(100% - 40px); /* Внешний отступ уменьшается до 20px */
+        padding: 20px 8px; /* Уменьшаем внешние отступы на мобильных устройствах */
     }
 
     .hero-section h1 {
-        font-size: 2.5vw; /* Уменьшаем шрифт на средних экранах */
+        font-size: 1.8em; /* Уменьшаем размер заголовка на мобильных */
     }
 
     .hero-section p {
-        font-size: 1.3vw; /* Уменьшаем шрифт на средних экранах */
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 40px 10px; /* Внутренний отступ для мобильных */
-        max-width: calc(100% - 16px); /* Внешний отступ 8px с каждой стороны */
+        font-size: 1em; /* Уменьшаем размер текста на мобильных */
     }
 
-    .hero-section h1 {
-        font-size: 5vw; /* Уменьшаем шрифт на маленьких экранах */
-    }
-
-    .hero-section p {
-        font-size: 3vw; /* Уменьшаем шрифт на маленьких экранах */
-    }
-
-    .images-wrapper {
-        flex-direction: column; /* Размещаем картинки в колонку на мобильных */
-    }
-
-    .rounded-image {
-        width: 100px;
+    .cta-button {
+        font-size: 1em; /* Уменьшаем размер кнопки на мобильных */
     }
 
     .icons-wrapper {
-        flex-direction: column;
+        justify-content: center; /* Выравниваем иконки по центру на мобильных */
         gap: 10px;
     }
 
     .icon {
-        max-width: 90%;
+        font-size: 0.9em; /* Уменьшаем размер текста в иконках */
     }
 }

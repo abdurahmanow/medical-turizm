@@ -1,9 +1,15 @@
 // Открыть pop-up
 const popup = document.getElementById('popup');
 const contactButton = document.getElementById('contact-button');
+const openPopupButton = document.getElementById('open-popup'); // Вторая кнопка
 const closePopup = document.querySelector('.close-popup');
 
 contactButton.addEventListener('click', () => {
+    popup.style.display = 'flex';
+});
+
+// Добавляем обработчик для второй кнопки
+openPopupButton.addEventListener('click', () => {
     popup.style.display = 'flex';
 });
 
