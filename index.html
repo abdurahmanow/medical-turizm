@@ -7,17 +7,33 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/derection.css">
+    <link rel="stylesheet" href="css/foter.css">
+
 </head>
 <body>
     <header id="main-header">
         <div class="container">
             <div class="logo">MedicalTourism</div>
             <div class="contacts" id="contacts">
-                <span>+123 456 789</span>
-                <button id="contact-button">Связаться</button>
+                <div class="contact-info">
+                    <!-- Телефон с ссылкой для звонка -->
+                    <a href="tel:+123456789" class="phone">+123 456 789</a>
+                    <!-- Иконки мессенджеров -->
+                    <a href="viber://chat?number=%2B123456789" class="contact-icon">
+                        <img src="img/viber-icon.png" alt="Viber">
+                    </a>
+                    <a href="https://wa.me/123456789" class="contact-icon">
+                        <img src="img/whatsapp-icon.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://t.me/username" class="contact-icon">
+                        <img src="img/telegram-icon.png" >
+                    </a>
+                </div>
+                <button id="contact-button">Связаться с нами</button>
             </div>
         </div>
-    </header>
+    </header>    
 
     <!-- Добавляем pop-up прямо в страницу -->
     <div id="popup" class="popup">
@@ -83,6 +99,81 @@
         </div>
       </div>      
     
+      <section class="directions-container">
+        <div class="directions">
+          <h2>Основные направления, которые выбирают наши пациенты</h2>
+          <p>Мы работаем с лучшими клиниками и находим решения для любых проблем — от лечения зарекомендовавшими себя высоко стандартизированными процедурами до экспериментального лечения редких заболеваний.</p>
+          <div class="directions-grid">
+            <div class="direction-item">Трансплантация волос</div>
+            <div class="direction-item">Стоматология</div>
+            <div class="direction-item">Офтальмология</div>
+            <div class="direction-item">Гинекология/Урология</div>
+            <div class="direction-item">Бариатрическая хирургия</div>
+            <div class="direction-item">Нейрохирургия</div>
+            <div class="direction-item">Онкология (Онкоортопедия)</div>
+            <div class="direction-item">Детская онкология</div>
+            <div class="direction-item">Сахарный диабет</div>
+            <div class="direction-item">Чекап организма</div>
+            <div class="direction-item">Детское направление</div>
+            <div class="direction-item">Ортопедия</div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="path-to-logo.png" alt="MedicalTourism Logo">
+                    <p>Каждый пациент имеет право на качественное лечение.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#"><img src="path-to-youtube-icon.png" alt="YouTube"></a>
+                    <a href="#"><img src="path-to-instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="path-to-telegram-icon.png" alt="Telegram"></a>
+                    <a href="#"><img src="path-to-whatsapp-icon.png" alt="WhatsApp"></a>
+                    <a href="#"><img src="path-to-email-icon.png" alt="Email"></a>
+                    <a href="#"><img src="path-to-phone-icon.png" alt="Phone"></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Команда</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Направления</h4>
+                    <ul>
+                        <li><a href="#">Трансплантация волос</a></li>
+                        <li><a href="#">Стоматология</a></li>
+                        <li><a href="#">Офтальмология</a></li>
+                        <li><a href="#">Чекап организма</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Бариатрическая хирургия</a></li>
+                        <li><a href="#">Нейрохирургия</a></li>
+                        <li><a href="#">Сахарный диабет</a></li>
+                        <li><a href="#">Детское направление</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <ul>
+                        <li><a href="#">Онкология</a></li>
+                        <li><a href="#">Гинекология/Урология</a></li>
+                        <li><a href="#">Ортопедия</a></li>
+                        <li><a href="#">Детская онкология</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>    
 
     <script src="js/script.js"></script>
     <script src="js/popup.js"></script>

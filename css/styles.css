@@ -6,33 +6,35 @@ body {
     padding: 0;
 }
 
-/* Стили для меню */
+/* Шапка */
 header {
     position: fixed;
-    top: 20px; /* Отступ сверху */
-    width: calc(100% - 160px); /* Учитываем отступы по 80px с каждой стороны */
+    top: 20px;
+    width: 100%; /* Убираем calc для полной ширины */
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding: 15px 0;
-    margin: 0 80px; /* Отступы слева и справа */
-    border-radius: 15px; /* Закругление краев */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для приподнятости */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     z-index: 100;
     transition: top 0.3s ease;
 }
 
 /* Контейнер для логотипа и контактов */
 .container {
+    max-width: 1200px; /* Максимальная ширина как в hero-секции */
+    margin: 0 auto; /* Центрируем контейнер */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px; /* Отступы внутри контейнера: 50px слева и справа */
+    padding: 0 40px; /* Аналогичный padding как в hero-секции */
 }
 
 /* Логотип */
 .logo {
     font-size: 24px;
     font-weight: bold;
+    text-align: left; /* Выровняем по левому краю */
 }
 
 /* Контакты и кнопка */
@@ -41,17 +43,42 @@ header {
     align-items: center;
 }
 
-.contacts span {
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Отступ между контактной информацией и кнопкой */
+}
+
+/* Телефон */
+.phone {
+    margin-right: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Иконки мессенджеров */
+.contact-icon {
     margin-right: 10px;
 }
 
+.contact-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Кнопка Связаться с нами */
 #contact-button {
-    background-color: #ADD8E6;
-    border: none;
-    padding: 10px 20px;
+    background-color: #0c93c1;
     color: white;
+    padding: 10px 20px; /* Сделаем чуть более просторной */
+    border: none; /* Убираем лишние бордюры */
+    border-radius: 15px;
+    font-size: 16px; /* Немного уменьшим размер шрифта */
+    font-weight: 500; /* Чуть уменьшенная жирность */
+    text-align: center;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #contact-button:hover {
@@ -61,20 +88,23 @@ header {
 /* Мобильная версия */
 @media (max-width: 768px) {
     header {
-        margin: 0; /* Убираем отступы на маленьких экранах */
+        margin: 0;
         width: 100%;
-        border-radius: 0; /* Убираем закругления */
+        border-radius: 0;
     }
 
     .container {
-        padding: 0 20px; /* Уменьшаем отступы внутри контейнера на мобильных экранах */
+        padding: 0 20px;
     }
 
-    .contacts {
+    .contact-info {
         display: none;
     }
 
     .logo {
-        margin: 0 auto;
+        font-size: 20px; /* Уменьшаем размер названия */
+        text-align: left; /* Убираем выравнивание по центру, оставляем по левому краю */
+        margin: 0; /* Убираем автоматическое центрирование */
     }
 }
+
