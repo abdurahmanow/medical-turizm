@@ -1,110 +1,69 @@
 /* Основные стили для сайта */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2; /* Нежно-серый фон */
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
-/* Шапка */
-header {
-    position: fixed;
-    top: 20px;
-    width: 100%; /* Убираем calc для полной ширины */
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    transition: top 0.3s ease;
-}
-
-/* Контейнер для логотипа и контактов */
+/* Общие стили контейнеров */
 .container {
-    max-width: 1200px; /* Максимальная ширина как в hero-секции */
-    margin: 0 auto; /* Центрируем контейнер */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px; /* Аналогичный padding как в hero-секции */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px; /* Внутренние отступы */
 }
 
-/* Логотип */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: left; /* Выровняем по левому краю */
+/* Увеличенные внешние отступы для блоков Hero и Directions */
+.hero-section,
+.directions-container {
+    max-width: 1200px;
+    margin-left: 250px; /* Увеличенные отступы слева */
+    margin-right: 250px; /* Увеличенные отступы справа */
+    margin-top: 115px; /* Внешний отступ сверху */
+    margin-bottom: 50px; /* Внешний отступ снизу */
 }
 
-/* Контакты и кнопка */
-.contacts {
-    display: flex;
-    align-items: center;
-}
-
-.contact-info {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Отступ между контактной информацией и кнопкой */
-}
-
-/* Телефон */
-.phone {
-    margin-right: 15px;
-    font-size: 18px;
-    text-decoration: none;
-    color: #333;
-}
-
-/* Иконки мессенджеров */
-.contact-icon {
-    margin-right: 10px;
-}
-
-.contact-icon img {
-    width: 24px;
-    height: 24px;
-}
-
-/* Кнопка Связаться с нами */
-#contact-button {
-    background-color: #0c93c1;
-    color: white;
-    padding: 10px 20px; /* Сделаем чуть более просторной */
-    border: none; /* Убираем лишние бордюры */
-    border-radius: 15px;
-    font-size: 16px; /* Немного уменьшим размер шрифта */
-    font-weight: 500; /* Чуть уменьшенная жирность */
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#contact-button:hover {
-    background-color: #87CEEB;
-}
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-    header {
-        margin: 0;
-        width: 100%;
-        border-radius: 0;
+/* Динамическое уменьшение отступов для разных экранов */
+@media (max-width: 1200px) {
+    .hero-section,
+    .directions-container {
+        margin-left: 150px; /* Уменьшаем отступы для экранов до 1200px */
+        margin-right: 150px;
     }
+}
 
+@media (max-width: 992px) {
+    .hero-section,
+    .directions-container {
+        margin-left: 100px; /* Еще больше уменьшаем для экранов до 992px */
+        margin-right: 100px;
+    }
+}
+
+/* Мобильные стили для контейнеров */
+@media (max-width: 768px) {
     .container {
         padding: 0 20px;
     }
 
-    .contact-info {
-        display: none;
+    .hero-section,
+    .directions-container {
+        margin-left: 20px; /* Внешний отступ слева на мобильных */
+        margin-right: 20px; /* Внешний отступ справа на мобильных */
+        margin-top: 50px; /* Уменьшаем внешний отступ сверху */
     }
+}
 
-    .logo {
-        font-size: 20px; /* Уменьшаем размер названия */
-        text-align: left; /* Убираем выравнивание по центру, оставляем по левому краю */
-        margin: 0; /* Убираем автоматическое центрирование */
+@media (max-width: 576px) {
+    .hero-section,
+    .directions-container {
+        margin-left: 20px; /* Минимальные отступы для маленьких экранов */
+        margin-right: 20px;
     }
+}
+
+/* Глобальные стили для секций */
+section {
+    margin-bottom: 50px;
 }
 

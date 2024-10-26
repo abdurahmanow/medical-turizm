@@ -1,0 +1,96 @@
+/* Шапка */
+header {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+
+/* Логотип */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Контейнер для логотипа и контактов */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Выровнять логотип слева, контакты справа */
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Контакты и кнопка */
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Отступ между контактной информацией и кнопкой */
+}
+
+/* Телефон */
+.phone {
+    margin-right: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Иконки мессенджеров */
+.contact-icon {
+    margin-right: 10px;
+}
+
+.contact-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Кнопка Связаться с нами */
+#contact-button {
+    padding: 10px 20px;
+    background-color: #0c93c1;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-button:hover {
+    background-color: #87CEEB;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    header {
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .logo {
+        font-size: 20px;
+        text-align: left;
+        margin: 0;
+    }
+}

@@ -21,8 +21,10 @@
     flex-wrap: wrap;
 }
 
-.footer-logo {
-    flex: 1;
+.footer-logo h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0;
 }
 
 .footer-logo p {
@@ -100,8 +102,19 @@
         align-items: center;
     }
 
+    /* Две колонки в ряд */
     .footer-links {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Две колонки в ряд */
+        gap: 20px; /* Пространство между колонками */
+    }
+
+    .footer-column h4 {
+        font-size: 16px; /* Уменьшаем шрифт для заголовков */
+    }
+
+    .footer-column ul li a {
+        font-size: 14px; /* Уменьшаем шрифт для ссылок */
     }
 }
 
@@ -111,7 +124,13 @@
         height: 30px;
     }
 
+    /* На маленьких экранах две колонки в ряд */
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
     .footer-column ul li a {
-        font-size: 14px;
+        font-size: 13px; /* Еще немного уменьшаем шрифт */
     }
 }

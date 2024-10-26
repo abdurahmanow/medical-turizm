@@ -1,37 +1,33 @@
-/* Контейнер для блока с направлениями */
+/* Контейнер для блока направлений */
 .directions-container {
     background-color: #ffffff;
     border-radius: 40px;
-    padding: 40px 80px; /* Отступы такие же, как в hero */
+    padding: 40px 80px;
     margin-top: 50px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Внутренние стили для текста и карточек направлений */
+/* Внутренние стили для текста */
 .directions h2 {
     font-size: 32px;
     font-weight: bold;
     color: #003366;
     margin-bottom: 20px;
-    text-align: left; /* Выровняем заголовок по левому краю */
+    text-align: left;
 }
 
 .directions p {
-    text-align: left; /* Выровняем текст по левому краю */
+    text-align: left;
     font-size: 18px;
     color: #555;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
+    margin-bottom: 40px;
 }
 
 /* Сетка направлений */
 .directions-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Сохраняем левое выравнивание */
+    justify-content: flex-start; /* Левое выравнивание */
     gap: 15px;
 }
 
@@ -40,55 +36,16 @@
     background-color: #003bb5;
     color: white;
     padding: 15px 25px;
-    border-radius: 40px; /* Овальная форма карточек */
+    border-radius: 40px;
     font-size: 16px;
-    font-weight: 500;
     text-align: center;
-    transition: background-color 0.3s ease;
-    min-width: 150px;
-    max-width: 220px;
-    white-space: nowrap; /* Чтобы текст не переносился на новую строку */
+    flex: 0 1 auto;
 }
 
-.direction-item:hover {
-    background-color: #002f9b;
-}
-
-/* Адаптивность */
-@media (max-width: 992px) {
-    .directions-container {
-        padding: 40px 60px; /* Уменьшаем отступы для планшетов */
-    }
-
-    .direction-item {
-        min-width: 140px;
-        max-width: 200px;
-    }
-
-    .directions h2 {
-        font-size: 28px;
-    }
-
-    .directions p {
-        font-size: 16px;
-    }
-}
-
-/* Мобильная версия - 3 карточки в ряду */
+/* Мобильная версия направлений */
 @media (max-width: 768px) {
     .directions-container {
-        padding: 30px 40px; /* Еще больше уменьшаем отступы */
-    }
-
-    .directions-grid {
-        justify-content: center; /* Центрируем карточки */
-        gap: 10px;
-    }
-
-    .direction-item {
-        flex: 0 1 calc(33.33% - 10px); /* Три карточки в ряду */
-        padding: 12px 15px; /* Уменьшаем отступы */
-        font-size: 14px;
+        padding: 30px 40px;
     }
 
     .directions h2 {
@@ -98,30 +55,15 @@
     .directions p {
         font-size: 16px;
     }
-}
-
-/* На экранах менее 576px */
-@media (max-width: 576px) {
-    .directions-container {
-        padding: 20px 20px; /* Минимальные отступы для маленьких экранов */
-    }
 
     .directions-grid {
-        gap: 8px; /* Уменьшаем промежутки между карточками */
+        justify-content: center;
+        gap: 10px;
     }
 
     .direction-item {
-        flex: 0 1 calc(33.33% - 8px); /* Три карточки в ряду */
-        padding: 10px 12px; /* Сжатие отступов для маленьких экранов */
-        font-size: 12px;
-        border-radius: 30px; /* Слегка уменьшаем скругления */
-    }
-
-    .directions h2 {
-        font-size: 20px;
-    }
-
-    .directions p {
+        flex: 0 1 calc(33.33% - 10px);
         font-size: 14px;
+        padding: 10px 15px;
     }
 }

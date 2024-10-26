@@ -1,0 +1,87 @@
+/* Стиль для секции шагов */
+.steps-section {
+    padding: 40px 60px;
+    background-color: #f2f4f7;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.steps-section h2 {
+    font-size: 2em;
+    color: #001f3f;
+    margin-bottom: 30px;
+}
+
+/* Сетка шагов */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Сетка из 4 колонок */
+    gap: 20px;
+}
+
+/* Стиль для каждого шага */
+.step-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    min-height: 200px;
+}
+
+/* Номер шага */
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: #3155d6;
+    color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Текст внутри шага */
+.step-item p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Специальный стиль для последнего шага */
+.step-item.highlighted {
+    background-color: #3155d6;
+    color: #fff;
+}
+
+.step-item.highlighted p {
+    color: #fff;
+}
+
+/* Мобильная версия */
+@media (max-width: 992px) {
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr); /* Сетка из 2 колонок на планшетах */
+    }
+}
+
+@media (max-width: 576px) {
+    .steps-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+    }
+
+    .step-number {
+        top: -10px;
+        left: -10px;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .step-item {
+        min-height: auto;
+    }
+}
