@@ -1,7 +1,6 @@
 /* Стиль для секции шагов */
 .steps-section {
     padding: 40px 60px;
-    background-color: #f2f4f7;
     text-align: left;
     max-width: 1200px;
     margin: 0 auto;
@@ -23,11 +22,13 @@
 /* Стиль для каждого шага */
 .step-item {
     background-color: #fff;
-    padding: 20px;
+    padding: 30px 20px 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
-    min-height: 200px;
+    min-height: 125px;
+    text-align: left;
+    padding-top: 60px;
 }
 
 /* Номер шага */
@@ -42,6 +43,18 @@
     font-size: 1.2em;
     font-weight: bold;
     z-index: 1;
+}
+
+/* Иконка шага */
+.step-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.step-icon img {
+    width: 30px;
+    height: 30px;
 }
 
 /* Текст внутри шага */
@@ -60,6 +73,11 @@
 
 .step-item.highlighted p {
     color: #fff;
+}
+
+/* Белая иконка для последнего шага */
+.step-item.highlighted .step-icon img {
+    filter: invert(1); /* Изменение цвета иконки на белый */
 }
 
 /* Мобильная версия */

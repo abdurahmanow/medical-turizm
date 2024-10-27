@@ -17,8 +17,8 @@ body {
 .hero-section,
 .directions-container {
     max-width: 1200px;
-    margin-left: 250px; /* Увеличенные отступы слева */
-    margin-right: 250px; /* Увеличенные отступы справа */
+    margin-left: 220px; /* Увеличенные отступы слева */
+    margin-right: 230px; /* Увеличенные отступы справа */
     margin-top: 115px; /* Внешний отступ сверху */
     margin-bottom: 50px; /* Внешний отступ снизу */
 }

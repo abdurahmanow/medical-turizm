@@ -39,22 +39,36 @@
     justify-content: center;
 }
 
+/* Иконки социальных сетей */
 .footer-socials a img {
     width: 40px;
     height: 40px;
-    background-color: transparent;
-    border: 2px solid #ffffff;
+    background-color: #ffffff; /* Белый фон по умолчанию */
+    border: 2px solid #ffffff; /* Белая обводка */
     border-radius: 10px;
     padding: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+    filter: invert(1); /* Меняем цвет иконок на темный */
 }
 
-.footer-socials a img:hover {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    filter: invert(100%);
+/* Изменение фона при наведении для каждой иконки */
+.footer-socials a.whatsapp img:hover {
+    background-color: #25D366; /* Зеленый для WhatsApp */
 }
 
+.footer-socials a.telegram img:hover {
+    background-color: #0088cc; /* Голубой для Telegram */
+}
+
+.footer-socials a.email img:hover {
+    background-color: #D44638; /* Красный для Email */
+}
+
+.footer-socials a.phone img:hover {
+    background-color: #0072c6; /* Синий для телефона */
+}
+
+/* Стили ссылок в подвале */
 .footer-links {
     display: flex;
     justify-content: space-between;
@@ -102,19 +116,18 @@
         align-items: center;
     }
 
-    /* Две колонки в ряд */
     .footer-links {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Две колонки в ряд */
-        gap: 20px; /* Пространство между колонками */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .footer-column h4 {
-        font-size: 16px; /* Уменьшаем шрифт для заголовков */
+        font-size: 16px;
     }
 
     .footer-column ul li a {
-        font-size: 14px; /* Уменьшаем шрифт для ссылок */
+        font-size: 14px;
     }
 }
 
@@ -124,13 +137,12 @@
         height: 30px;
     }
 
-    /* На маленьких экранах две колонки в ряд */
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
 
     .footer-column ul li a {
-        font-size: 13px; /* Еще немного уменьшаем шрифт */
+        font-size: 13px;
     }
 }
