@@ -1,3 +1,6 @@
+/* Импортируем шрифт Niccone из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Niccone&display=swap');
+
 /* Шапка */
 header {
     position: fixed;
@@ -17,6 +20,7 @@ header {
     font-size: 24px;
     font-weight: bold;
     text-align: left;
+    font-family: 'Niccone', long; /* Применяем шрифт Niccone */
 }
 
 /* Контейнер для логотипа и контактов */
@@ -24,7 +28,7 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between; /* Выровнять логотип слева, контакты справа */
+    justify-content: space-between;
     align-items: center;
     padding: 0 40px;
 }
@@ -35,10 +39,16 @@ header {
     align-items: center;
 }
 
+/* Контейнер для телефона и иконок с фоном и закруглением */
 .contact-info {
     display: flex;
     align-items: center;
-    margin-right: 20px; /* Отступ между контактной информацией и кнопкой */
+    justify-content: center;
+    background-color: #f2f2f2; /* Очень светлый серый фон */
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-right: 20px;
+    position: relative; /* Для позиционирования всплывающего текста */
 }
 
 /* Телефон */
@@ -51,18 +61,73 @@ header {
 
 /* Иконки мессенджеров */
 .contact-icon {
+    position: relative;
     margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Размер иконок */
 .contact-icon img {
     width: 24px;
     height: 24px;
+    position: relative;
+    z-index: 1; /* Иконка выше фона */
+}
+
+/* Заливка фона при наведении */
+.contact-icon::before {
+    content: '';
+    position: absolute;
+    width: 24px; /* Ширина фона как у иконки */
+    height: 24px; /* Высота фона как у иконки */
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 0; /* Фон под иконкой */
+}
+
+/* Цвета фона при наведении для каждой иконки */
+.contact-icon[data-title="Viber"]:hover::before {
+    background-color: #665CAC; /* Фиолетовый для Viber */
+}
+
+.contact-icon[data-title="WhatsApp"]:hover::before {
+    background-color: #25D366; /* Зеленый для WhatsApp */
+}
+
+.contact-icon[data-title="Telegram"]:hover::before {
+    background-color: #2AABEE; /* Голубой для Telegram */
+}
+
+/* Показ data-title при наведении */
+.contact-icon::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #001f3f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    margin-bottom: 5px;
+}
+
+.contact-icon:hover::after {
+    opacity: 1;
 }
 
 /* Кнопка Связаться с нами */
 #contact-button {
     padding: 10px 20px;
-    background-color: #0c93c1;
+    background-color: #3155d6;
     color: white;
     border: none;
     border-radius: 15px;
@@ -73,7 +138,7 @@ header {
 }
 
 #contact-button:hover {
-    background-color: #87CEEB;
+    background-color: #25D366;
 }
 
 /* Мобильная версия */

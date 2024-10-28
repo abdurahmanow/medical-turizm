@@ -40,32 +40,63 @@
 }
 
 /* Иконки социальных сетей */
+.footer-socials a {
+    position: relative;
+    display: inline-block;
+}
+
 .footer-socials a img {
     width: 40px;
     height: 40px;
-    background-color: #ffffff; /* Белый фон по умолчанию */
+    background-color: transparent; /* Прозрачный фон по умолчанию */
     border: 2px solid #ffffff; /* Белая обводка */
     border-radius: 10px;
     padding: 5px;
-    transition: background-color 0.3s ease, filter 0.3s ease;
-    filter: invert(1); /* Меняем цвет иконок на темный */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Отображение текста при наведении */
+.footer-socials a::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 100%; /* Позиция над иконкой */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #001f3f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Показываем текст при наведении */
+.footer-socials a:hover::after {
+    opacity: 1;
 }
 
 /* Изменение фона при наведении для каждой иконки */
 .footer-socials a.whatsapp img:hover {
     background-color: #25D366; /* Зеленый для WhatsApp */
+    border-color: #25D366;
 }
 
 .footer-socials a.telegram img:hover {
-    background-color: #0088cc; /* Голубой для Telegram */
+    background-color: #2AABEE; /* Голубой для Telegram */
+    border-color: #2AABEE;
 }
 
-.footer-socials a.email img:hover {
+.footer-socials a.mail img:hover {
     background-color: #D44638; /* Красный для Email */
+    border-color: #D44638;
 }
 
-.footer-socials a.phone img:hover {
-    background-color: #0072c6; /* Синий для телефона */
+.footer-socials a.viber img:hover {
+    background-color: #665CAC; /* Фиолетовый для Viber */
+    border-color: #665CAC;
 }
 
 /* Стили ссылок в подвале */

@@ -20,22 +20,22 @@
             <div class="contacts" id="contacts">
                 <div class="contact-info">
                     <!-- Телефон с ссылкой для звонка -->
-                    <a href="tel:+123456789" class="phone">+123 456 789</a>
-                    <!-- Иконки мессенджеров -->
-                    <a href="viber://chat?number=%2B123456789" class="contact-icon">
-                        <img src="img/viber-icon.png" alt="Viber">
+                    <a href="tel:+380636020157" class="phone">+38(063)60-20-157</a>
+                    <!-- Иконки мессенджеров с data-title для всплывающих названий -->
+                    <a href="viber://chat?number=%2B123456789" class="contact-icon" data-title="Viber">
+                        <img src="img/viber-h.png" alt="">
                     </a>
-                    <a href="https://wa.me/123456789" class="contact-icon">
-                        <img src="img/whatsapp-icon.png" alt="WhatsApp">
+                    <a href="https://wa.me/123456789" class="contact-icon" data-title="WhatsApp">
+                        <img src="img/whatsapp-h.png" alt="">
                     </a>
-                    <a href="https://t.me/username" class="contact-icon">
-                        <img src="img/telegram-icon.png" >
+                    <a href="https://t.me/username" class="contact-icon" data-title="Telegram">
+                        <img src="img/telegram-h.png" alt="">
                     </a>
                 </div>
                 <button id="contact-button">Связаться с нами</button>
             </div>
         </div>
-    </header>    
+    </header>      
 
     <!-- Добавляем pop-up прямо в страницу -->
     <div id="popup" class="popup">
@@ -191,12 +191,12 @@
                     <h2>MedicalTourism</h2> <!-- Лого теперь просто текст -->
                     <p>Каждый пациент имеет право на качественное лечение.</p>
                 </div>
-                <div class="footer-socials">
-                    <a href="#"><img src="img/telegram.png" alt=""></a>
-                    <a href="#"><img src="img/whatsapp.png" alt=""></a>
-                    <a href="#"><img src="img/viber.png" alt=""></a>
-                   <!---- <a href="#"><img src="path-to-phone-icon.png" alt=""></a> -->
-                </div>
+            <div class="footer-socials">
+                <a href="#" class="telegram" data-title="Telegram"><img src="img/telegram.png" alt=""></a>
+                <a href="#" class="whatsapp" data-title="WhatsApp"><img src="img/whatsapp.png" alt=""></a>
+                <a href="#" class="viber" data-title="Viber"><img src="img/viber.png" alt=""></a>
+                <a href="#" class="mail" data-title="Gmail"><img src="img/mail.png" alt=""></a>
+            </div>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
