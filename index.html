@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Tourism</title>
+    <link rel="icon" href="img/medical-history.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/popup.css">
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="css/derection.css">
     <link rel="stylesheet" href="css/foter.css">
     <link rel="stylesheet" href="css/steps.css">
-
+    <link rel="stylesheet" href="css/faq.css">
 </head>
 <body>
     <header id="main-header">
@@ -101,7 +102,7 @@
         </div>
       </div>      
     
-      <section class="directions-container">
+      <section id="derection" class="directions-container">
         <div class="directions">
           <h2>Основные направления, которые выбирают наши пациенты</h2>
           <p>Мы работаем с лучшими клиниками и находим решения для любых проблем — от лечения зарекомендовавшими себя высоко стандартизированными процедурами до экспериментального лечения редких заболеваний.</p>
@@ -122,7 +123,7 @@
         </div>
       </section>
 
-      <section class="steps-section">
+      <section id="steps" class="steps-section">
         <h2>Этапы оказания услуги</h2>
         <div class="steps-grid">
             <div class="step-item">
@@ -182,7 +183,63 @@
                 <p>Круглосуточная whatsapp поддержка пациента по возвращении домой.</p>
             </div>
         </div>
-    </section>    
+    </section> 
+    
+      <section id="faq" class="faq-section">
+        <h2>Отвечаем на часто задаваемые вопросы</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Почему именно Турция?
+                    <span class="faq-icon">⬆</span>
+                </button>
+                <div class="faq-answer active">
+                    Турция предлагает качественное лечение при меньших затратах по сравнению с Европой, США и Израилем. 
+                    Некоторые операции на 90 процентов дешевле, чем в других странах. Инфраструктура и медицинские учреждения предлагают стандарты мирового уровня. 
+                    Кроме того, Турция сочетает в себе профессиональные медицинские услуги с исключительным отдыхом.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Как рассчитать стоимость лечения?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer">
+                    Стоимость зависит от программы лечения. Мы предлагаем несколько вариантов клиник в разных ценовых сегментах. 
+                    Помимо этого, цена зависит от дополнительных услуг (проживание, организация отдыха и т. п.). 
+                    Окончательную стоимость вам сообщит менеджер после того, как получит всю исходную информацию.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Есть ли гарантии на лечения?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer">
+                    Все наши пациенты застрахованы и имеют юридическую защиту.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Какое оборудование используется в клиниках?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer">
+                    Мы работаем с клиниками, в которых используется передовое высокотехнологичное оборудование. 
+                    Какое именно оснащение имеет лечебное учреждение, вы можете уточнить на сайте клиники.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Врач ставит диагноз по анализам дистанционно или нужно сдавать анализы на месте?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer">
+                    Мы переводим результаты ваших анализов на турецкий язык и врач ставит диагноз и подбирает программу лечения согласно им.
+                </div>
+            </div>
+        </div>
+    </section>   
 
       <footer class="site-footer">
         <div class="footer-container">
@@ -202,10 +259,10 @@
                 <div class="footer-column">
                     <h4>Навигация</h4>
                     <ul>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Команда</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#steps">Этапы оказания услуг</a></li>
+                        <li><a href="#derection">Направления</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -241,5 +298,6 @@
 
     <script src="js/script.js"></script>
     <script src="js/popup.js"></script>
+    <script src="js/faq.js"></script>
 </body>
 </html>
