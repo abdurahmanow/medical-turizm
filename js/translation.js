@@ -1,5 +1,5 @@
 async function fetchTranslations() {
-    const response = await fetch('/locales/uk.json');
+    const response = await fetch('/js/locales/uk.json');
     return response.json();
 }
 
