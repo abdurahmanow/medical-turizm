@@ -1,7 +1,5 @@
-const defaultLang = 'uk'; // Дефолтный язык - украинский
-
-async function fetchTranslations(lang) {
-    const response = await fetch(`/locales/${lang}.json`);
+async function fetchTranslations() {
+    const response = await fetch('/locales/uk.json');
     return response.json();
 }
 
@@ -20,8 +18,9 @@ function setTranslations(translations) {
 }
 
 async function initializeLanguage() {
-    const translations = await fetchTranslations(defaultLang); // Всегда загружаем украинский язык
+    const translations = await fetchTranslations();
     setTranslations(translations);
 }
 
 document.addEventListener('DOMContentLoaded', initializeLanguage);
+
