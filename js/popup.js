@@ -81,20 +81,24 @@ document.getElementById('submitBtn').addEventListener('click', function (e) {
 });
 
 document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // Останавливаем стандартную отправку формы
+    e.preventDefault();
 
-    // Собираем данные с формы
+    const submitButton = document.getElementById('submitBtn');
+    const popup = document.getElementById('popup'); // Получаем pop-up
+
+    if (submitButton.disabled) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Отправка...';
+
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-    const direction = document.getElementById('direction').value;
-    const comment = document.getElementById('comment').value;
+    const direction = document.getElementById('directionText').value;
 
-    // Подставьте ваш токен бота и chat_id (ID чата или канала)
-    const botToken = '1216940738:AAEg5JGMKiM1PWfnsJ2EgMFYE_dafan7AbI';
+    const botToken = '7273500669:AAGOade_TuXW51wxTMp516kLI_UDf-xkOO8';
     const chatId = '-1001963011260';
-    const message = `Новая заявка:\nИмя: ${name}\nТелефон: +38${phone}\nНаправление: ${direction}\nКомментарий: ${comment}`;
+    const message = `Новая заявка:\nИмя: ${name}\nТелефон: +38${phone}\nНаправление: ${direction}`;
 
-    // Отправляем запрос к Telegram API
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: 'POST',
         headers: {
@@ -108,12 +112,47 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
-            alert('Заявка успешно отправлена!');
+            showToast('Заявка успешно отправлена!');
+            document.getElementById('contact-form').reset();
+
+            // Закрытие pop-up после успешной отправки
+            popup.style.display = 'none';
         } else {
-            alert('Ошибка отправки заявки.');
+            showToast('Ошибка отправки заявки.');
         }
     })
     .catch(error => {
-        alert('Произошла ошибка: ' + error);
+        showToast('Произошла ошибка: ' + error);
+    })
+    .finally(() => {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Отправить';
     });
 });
+
+// Функция для показа уведомления
+function showToast(message) {
+    const toastContainer = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.classList.add('toast');
+    toast.textContent = message;
+    
+    toastContainer.appendChild(toast);
+    toastContainer.style.display = 'block';
+
+    // Удаляем уведомление через 5 секунд
+    setTimeout(() => {
+        toast.remove();
+        if (toastContainer.children.length === 0) {
+            toastContainer.style.display = 'none';
+        }
+    }, 5000);
+}
+
+function updateDirectionText() {
+    const directionSelect = document.getElementById('direction');
+    const directionText = directionSelect.options[directionSelect.selectedIndex].text;
+
+    // Записываем текст выбранного направления в скрытое поле
+    document.getElementById('directionText').value = directionText;
+}

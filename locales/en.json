@@ -1,0 +1,39 @@
+{
+    "header": {
+        "title": "Medical Tourism",
+        "description": "Complete medical assistance in Turkey's best clinics"
+    },
+    "hero": {
+        "title": "Full support and organization for treatment in the best clinics of Turkey",
+        "subtitle": "We are experts in medical tourism in Turkey, partnering with world-class clinics and doctors to ensure quality treatment and results.",
+        "cta": "Free Consultation",
+        "icons": [
+            "Combining treatment and leisure",
+            "Doctors from Turkey, Europe, and CIS",
+            "Over 4 years of experience",
+            "More than 1000 clients"
+        ]
+    },
+    "directions": {
+        "title": "Main destinations chosen by our patients",
+        "description": "We work with top clinics and offer solutions for any issues, from proven high-standard treatments to experimental therapy for rare diseases.",
+        "list": [
+            "Hair Transplant",
+            "Dentistry",
+            "Ophthalmology",
+            "Gynecology/Urology",
+            "Bariatric Surgery",
+            "Neurosurgery",
+            "Oncology (Oncoorthopedics)",
+            "Pediatric Oncology",
+            "Diabetes Treatment",
+            "Health Check-up",
+            "Pediatric Direction",
+            "Orthopedics"
+        ]
+    },
+    "footer": {
+        "logo": "MedicalTourism",
+        "description": "Every patient has the right to quality treatment."
+    }
+}
