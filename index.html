@@ -17,7 +17,7 @@
 <body>
     <header id="main-header">
         <div class="container">
-            <div class="logo" data-translate-key="header.title">MedicalTourism</div>
+            <div class="logo" data-translate-key="header.title">Медичний туризм</div>
             <div class="contacts" id="contacts">
                 <div class="contact-info">
                     <a href="tel:+380952502180" class="phone">+38(095)25-02-180</a>
@@ -31,7 +31,7 @@
                         <img src="img/telegram-h.png" alt="">
                     </a>
                 </div>
-                <button id="contact-button" data-translate-key="contact-us"></button>
+                <button id="contact-button" data-translate-key="contact-us">Зв'язатися з нами</button>
                 <div id="toast-container" class="toast-container"></div>
             </div>
         </div>
@@ -40,220 +40,235 @@
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close-popup">&times;</span>
-            <h2 data-translate-key="popup.title"></h2>
+            <h2 data-translate-key="popup.title">Залишити заявку</h2>
             <form id="contact-form">
                 <div class="field-wrapper">
-                    <label for="name" data-translate-key="popup.name"></label>
-                    <input type="text" id="name" placeholder="Name" maxlength="50">
+                    <label for="name" data-translate-key="popup.name">Ім'я</label>
+                    <input type="text" id="name" placeholder="Ім'я" maxlength="50">
                 </div>
                 
                 <div class="field-wrapper phone-wrapper">
-                    <label for="phone" data-translate-key="popup.phone"></label>
+                    <label for="phone" data-translate-key="popup.phone">Номер</label>
                     <span class="phone-prefix">+38</span>
                     <input type="tel" id="phone" placeholder="0XX XXX XXXX" maxlength="10" required>
                 </div>
     
                 <div class="field-wrapper">
-                    <label for="direction" data-translate-key="popup.direction">Direction</label>
+                    <label for="direction" data-translate-key="popup.direction">Напрямок</label>
                     <select id="direction" required onchange="updateDirectionText()">
-                        <option value="" data-translate-key="popup.direction.placeholder"></option>
-                        <option value="option1" data-translate-key="directions.list.0"></option>
-                        <option value="option2" data-translate-key="directions.list.1"></option>
-                        <option value="option3" data-translate-key="directions.list.2"></option>
-                        <option value="option4" data-translate-key="directions.list.3"></option>
-                        <option value="option5" data-translate-key="directions.list.4"></option>
-                        <option value="option6" data-translate-key="directions.list.5"></option>
-                        <option value="option7" data-translate-key="directions.list.6"></option>
-                        <option value="option8" data-translate-key="directions.list.7"></option>
-                        <option value="option9" data-translate-key="directions.list.8"></option>
-                        <option value="option10" data-translate-key="directions.list.9"></option>
-                        <option value="option11" data-translate-key="directions.list.10"></option>
-                        <option value="option12" data-translate-key="directions.list.11"></option>
+                        <option value="" data-translate-key="popup.direction.placeholder">Виберіть напрямок</option>
+                        <option value="option1" data-translate-key="directions.list.0">Трансплантація волосся</option>
+                        <option value="option2" data-translate-key="directions.list.1">Стоматологія</option>
+                        <option value="option3" data-translate-key="directions.list.2">Офтальмологія</option>
+                        <option value="option4" data-translate-key="directions.list.3">Гінекологія/Урологія</option>
+                        <option value="option5" data-translate-key="directions.list.4">Баріатрична хірургія</option>
+                        <option value="option6" data-translate-key="directions.list.5">Нейрохірургія</option>
+                        <option value="option7" data-translate-key="directions.list.6">Онкологія (Онкоортопедія)</option>
+                        <option value="option8" data-translate-key="directions.list.7">Дитяча онкологія</option>
+                        <option value="option9" data-translate-key="directions.list.8">Цукровий діабет</option>
+                        <option value="option10" data-translate-key="directions.list.9">Чекап організму</option>
+                        <option value="option11" data-translate-key="directions.list.10">Чекап організму</option>
+                        <option value="option12" data-translate-key="directions.list.11">Ортопедія</option>
                     </select>
                 </div>
                 
                 <!-- Скрытое поле для текста направления -->
                 <input type="hidden" id="directionText" name="directionText">                
     
-                <button id="submitBtn" disabled data-translate-key="popup.submit">Submit</button>
+                <button id="submitBtn" disabled data-translate-key="popup.submit">Відправити</button>
             </form>
         </div>
     </div>
 
     <div class="hero-section">
-        <h1 data-translate-key="hero.title">Full support and organization for treatment in Turkey's best clinics</h1>
-        <p data-translate-key="hero.subtitle">We are experts in medical tourism in Turkey, partnering with world-class clinics and doctors to ensure quality treatment and results.</p>
+        <h1 data-translate-key="hero.title">Організація та повний супровід лікування у найкращих клініках Туреччини</h1>
+        <p data-translate-key="hero.subtitle">Ми — експерти з медичного туризму в Туреччині, співпрацюємо з провідними клініками та лікарями світового рівня, щоб забезпечити вам якісне лікування та результати.</p>
         
-        <a href="#" class="cta-button" id="open-popup" data-translate-key="hero.cta">Free Consultation</a>
+        <a href="#" class="cta-button" id="open-popup" data-translate-key="hero.cta">Безкоштовна консультація</a>
       
         <div class="icons-wrapper">
-            <div class="icon" data-translate-key="hero.icons.0">Combining treatment and leisure</div>
-            <div class="icon" data-translate-key="hero.icons.1">Doctors from Turkey, Europe, and CIS</div>
-            <div class="icon" data-translate-key="hero.icons.2">Over 4 years of experience</div>
-            <div class="icon" data-translate-key="hero.icons.3">More than 1000 clients</div>
+            <div class="icon" data-translate-key="hero.icons.0">Поєднання лікування та відпочинку</div>
+            <div class="icon" data-translate-key="hero.icons.1">Лікарі з Туреччини, Європи та СНД</div>
+            <div class="icon" data-translate-key="hero.icons.2">Більше 4 років досвіду</div>
+            <div class="icon" data-translate-key="hero.icons.3">Більше 1000 клієнтів</div>
         </div>
     </div>      
     
     <section id="derection" class="directions-container">
         <div class="directions">
-            <h2 data-translate-key="directions.title">Main destinations chosen by our patients</h2>
-            <p data-translate-key="directions.description">We work with top clinics and offer solutions for any issues, from proven high-standard treatments to experimental therapy for rare diseases.</p>
+            <h2 data-translate-key="directions.title">Основні напрямки, які обирають наші пацієнти</h2>
+            <p data-translate-key="directions.description">Ми працюємо з кращими клініками та знаходимо рішення для будь-яких проблем — від перевірених високостандартизованих процедур до експериментального лікування рідкісних захворювань.</p>
             <div class="directions-grid">
-                <div class="direction-item" data-translate-key="directions.list.0">Hair Transplant</div>
-                <div class="direction-item" data-translate-key="directions.list.1">Dentistry</div>
-                <div class="direction-item" data-translate-key="directions.list.2">Ophthalmology</div>
-                <div class="direction-item" data-translate-key="directions.list.3">Gynecology/Urology</div>
-                <div class="direction-item" data-translate-key="directions.list.4">Bariatric Surgery</div>
-                <div class="direction-item" data-translate-key="directions.list.5">Neurosurgery</div>
-                <div class="direction-item" data-translate-key="directions.list.6">Oncology (Oncoorthopedics)</div>
-                <div class="direction-item" data-translate-key="directions.list.7">Pediatric Oncology</div>
-                <div class="direction-item" data-translate-key="directions.list.8">Diabetes</div>
-                <div class="direction-item" data-translate-key="directions.list.9">Health Check-up</div>
-                <div class="direction-item" data-translate-key="directions.list.10">Pediatric Services</div>
-                <div class="direction-item" data-translate-key="directions.list.11">Orthopedics</div>
+                <div class="direction-item" data-translate-key="directions.list.0">Трансплантація волосся</div>
+                <div class="direction-item" data-translate-key="directions.list.1">Стоматологія</div>
+                <div class="direction-item" data-translate-key="directions.list.2">Офтальмологія</div>
+                <div class="direction-item" data-translate-key="directions.list.3">Гінекологія/Урологія</div>
+                <div class="direction-item" data-translate-key="directions.list.4">Баріатрична хірургія</div>
+                <div class="direction-item" data-translate-key="directions.list.5">Нейрохірургія</div>
+                <div class="direction-item" data-translate-key="directions.list.6">Онкологія (Онкоортопедія)</div>
+                <div class="direction-item" data-translate-key="directions.list.7">Дитяча онкологія</div>
+                <div class="direction-item" data-translate-key="directions.list.8">Цукровий діабет</div>
+                <div class="direction-item" data-translate-key="directions.list.9">Чекап організму</div>
+                <div class="direction-item" data-translate-key="directions.list.10">Дитячий напрямок</div>
+                <div class="direction-item" data-translate-key="directions.list.11">Ортопедія</div>
             </div>
         </div>
     </section>
 
     <section id="steps" class="steps-section">
-        <h2 data-translate-key="steps.title">Service Process Steps</h2>
+        <h2 data-translate-key="steps.title">Етапи надання послуги</h2>
         <div class="steps-grid">
             <div class="step-item">
                 <div class="step-number">01</div>
                 <div class="step-icon">
                     <img src="img/genetic-counseling.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.0">Initial consultation where we review your test results and answer all questions.</p>
+                <p data-translate-key="steps.list.0">Первинна консультація, на якій ми отримуємо результати ваших аналізів та відповідаємо на всі запитання.</p>
             </div>
             <div class="step-item">
                 <div class="step-number">02</div>
                 <div class="step-icon">
                     <img src="img/monitor.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.1">Based on the results, the doctor provides a diagnosis and recommends treatment.</p>
+                <p data-translate-key="steps.list.1">На основі результатів аналізів лікар ставить діагноз та призначає лікування.</p>
             </div>
             <div class="step-item">
                 <div class="step-number">03</div>
                 <div class="step-icon">
                     <img src="img/hospital.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.2">Selecting a clinic and treatment program based on your budget.</p>
+                <p data-translate-key="steps.list.2">Підбираємо клініку та програму лікування відповідно до вашого бюджету.</p>
             </div>
             <div class="step-item">
                 <div class="step-number">04</div>
                 <div class="step-icon">
                     <img src="img/appointment.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.3">Scheduling your arrival and arranging accommodation.</p>
+                <p data-translate-key="steps.list.3">Погоджуємо дату приїзду та організовуємо проживання.</p>
             </div>
             <div class="step-item">
                 <div class="step-number">05</div>
                 <div class="step-icon">
                     <img src="img/transporting.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.4">Meeting you at the airport and transferring to the clinic.</p>
+                <p data-translate-key="steps.list.4">Зустрічаємо вас в аеропорту та відвозимо до клініки.</p>
             </div>
             <div class="step-item">
                 <div class="step-number">06</div>
                 <div class="step-icon">
                     <img src="img/surgery-room.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.5">Preparation for surgery.</p>
+                <p data-translate-key="steps.list.5">Підготовка до операції.</p>
             </div>
             <div class="step-item">
                 <div class="step-number">07</div>
                 <div class="step-icon">
                     <img src="img/phonendoscope.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.6">Postoperative monitoring, recovery recommendations.</p>
+                <p data-translate-key="steps.list.6">Післяопераційний контроль, рекомендації щодо відновлення.</p>
             </div>
             <div class="step-item highlighted">
                 <div class="step-number">08</div>
                 <div class="step-icon">
                     <img src="img/consultation.png" alt="">
                 </div>
-                <p data-translate-key="steps.list.7">24/7 WhatsApp support upon your return home.</p>
+                <p data-translate-key="steps.list.7">Цілодобова підтримка WhatsApp після повернення додому.</p>
             </div>
         </div>
     </section> 
 
     <section id="faq" class="faq-section">
-        <h2 data-translate-key="faq.title">Frequently Asked Questions</h2>
+        <h2 data-translate-key="faq.title">Відповідаємо на часті запитання</h2>
         <div class="faq">
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.0">
-                    Why Turkey?
+                    Чому саме Туреччина?
                     <span class="faq-icon">⬆</span>
                 </button>
                 <div class="faq-answer active" data-translate-key="faq.answers.0">
-                    Turkey offers high-quality treatment at a lower cost compared to Europe, the USA, and Israel. 
-                    Some surgeries are up to 90 percent cheaper than in other countries. Infrastructure and medical facilities meet world standards. 
-                    Additionally, Turkey combines professional medical services with exceptional relaxation.
+                    Туреччина пропонує якісне лікування за нижчими витратами порівняно з Європою, 
+                    США та Ізраїлем. Деякі операції на 90 відсотків дешевші, ніж в інших країнах. 
+                    Інфраструктура та медичні заклади відповідають світовим стандартам. Крім того, 
+                    Туреччина поєднує професійні медичні послуги з винятковим відпочинком.
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.1">
-                    How to calculate treatment cost?
+                    Як розрахувати вартість лікування?
                     <span class="faq-icon">⬇</span>
                 </button>
                 <div class="faq-answer" data-translate-key="faq.answers.1">
-                    Cost depends on the treatment program. We offer several options in different price segments. 
-                    Additionally, the price may vary depending on additional services (accommodation, leisure organization, etc.). 
-                    The final cost will be provided after all initial information is collected.
+                    Вартість залежить від програми лікування. Ми пропонуємо кілька варіантів клінік у різних цінових сегментах. 
+                    Крім того, ціна залежить від додаткових послуг (проживання, організація відпочинку тощо). 
+                    Остаточну вартість повідомить менеджер після отримання всієї вихідної інформації.
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.2">
-                    Are there treatment guarantees?
+                    Чи є гарантії на лікування?
                     <span class="faq-icon">⬇</span>
                 </button>
                 <div class="faq-answer" data-translate-key="faq.answers.2">
-                    All our patients are insured and have legal protection.
+                    Всі наші пацієнти застраховані та мають юридичний захист.
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.3">
-                    What equipment is used in clinics?
+                    Яке обладнання використовується в клініках?
                     <span class="faq-icon">⬇</span>
                 </button>
                 <div class="faq-answer" data-translate-key="faq.answers.3">
-                    We work with clinics equipped with advanced, high-tech medical equipment. 
-                    You can verify specific clinic facilities on their website.
+                    Ми працюємо з клініками, в яких використовується передове високотехнологічне обладнання. 
+                    Яке саме оснащення має лікувальний заклад, ви можете уточнити на сайті клініки.
                 </div>
             </div>
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.4">
-                    Can diagnosis be done remotely?
+                    Чи можливо дистанційно поставити діагноз?
                     <span class="faq-icon">⬇</span>
                 </button>
                 <div class="faq-answer" data-translate-key="faq.answers.4">
-                    We translate your test results into Turkish, and the doctor makes a diagnosis and treatment plan based on them.
+                    Ми перекладаємо результати ваших аналізів турецькою мовою, і лікар ставить діагноз та підбирає програму лікування згідно з ними.
                 </div>
             </div>
         </div>
     </section>   
 
     <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h2 data-translate-key="footer.logo">MedicalTourism</h2>
+                    <p data-translate-key="footer.description">Кожен пацієнт має право на якісне лікування.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" class="telegram" data-title="Telegram"><img src="img/telegram.png" alt=""></a>
+                    <a href="#" class="whatsapp" data-title="WhatsApp"><img src="img/whatsapp.png" alt=""></a>
+                    <a href="#" class="viber" data-title="Viber"><img src="img/viber.png" alt=""></a>
+                    <a href="#" class="mail" data-title="Gmail"><img src="img/mail.png" alt=""></a>
+                </div>
+            </div>
+
         <div class="footer-links">
             <div class="footer-column">
-                <h4 data-translate-key="footer.navigation.title">Navigation</h4>
+                <h4 data-translate-key="footer.navigation.title">Навігація</h4>
                 <ul>
-                    <li><a href="#steps" data-translate-key="footer.navigation.steps">Service Process Steps</a></li>
-                    <li><a href="#derection" data-translate-key="footer.navigation.directions">Directions</a></li>
+                    <li><a href="#steps" data-translate-key="footer.navigation.steps">Етапи надання послуг</a></li>
+                    <li><a href="#derection" data-translate-key="footer.navigation.directions">Напрямки</a></li>
                     <li><a href="#faq" data-translate-key="footer.navigation.faq">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4 data-translate-key="footer.directions.title">Направления</h4>
+                <h4 data-translate-key="footer.directions.title">Напрямки</h4>
                 <ul>
-                    <li><a href="#" data-translate-key="footer.directions.list.0">Трансплантация волос</a></li>
-                    <li><a href="#" data-translate-key="footer.directions.list.1">Стоматология</a></li>
-                    <li><a href="#" data-translate-key="footer.directions.list.2">Офтальмология</a></li>
-                    <li><a href="#" data-translate-key="footer.directions.list.3">Чекап организма</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.0">Трансплантація волосся</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.1">Стоматологія</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.2">Офтальмологія</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.3">Чекап організму</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4 data-translate-key="footer.directions.title">Направления</h4>
+                <h4 data-translate-key="footer.directions.title">Напрямки</h4>
                 <ul>
                     <li><a href="#" data-translate-key="footer.directions.list.4">Баріатрична хірургія</a></li>
                     <li><a href="#" data-translate-key="footer.directions.list.5">Нейрохірургія</a></li>
@@ -262,12 +277,12 @@
                 </ul>
             </div>
             <div class="footer-column">
-                <h4 data-translate-key="footer.directions.title">Направления</h4>
+                <h4 data-translate-key="footer.directions.title">Напрямки</h4>
                 <ul>
-                    <li><a href="#" data-translate-key="footer.directions.list.8">Онкология</a></li>
-                    <li><a href="#" data-translate-key="footer.directions.list.9">Гинекология/Урология</a></li>
-                    <li><a href="#" data-translate-key="footer.directions.list.10">Ортопедия</a></li>
-                    <li><a href="#" data-translate-key="footer.directions.list.11">Детская онкология</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.8">Онкологія</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.9">Гінекологія/Урологія</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.10">Ортопедія</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.11">Дитяча онкологія</a></li>
                 </ul>
             </div>
         </div>        
