@@ -60,10 +60,6 @@
     position: relative;
 }
 
-.phone-wrapper input {
-    padding-left: 38px;
-}
-
 .phone-wrapper .phone-prefix {
     position: absolute;
     left: 10px;

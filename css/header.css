@@ -141,6 +141,35 @@ header {
     background-color: #25D366;
 }
 
+/* Селектор языков */
+.language-selector {
+    margin-right: 20px;
+    position: relative;
+}
+
+.language-selector select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.language-selector select:hover {
+    border-color: #3155d6;
+    background-color: #fff;
+}
+
+.language-selector select:focus {
+    border-color: #25D366;
+    box-shadow: 0 0 6px rgba(37, 211, 102, 0.3);
+}
+
+
 /* Мобильная версия */
 @media (max-width: 768px) {
     header {
@@ -157,5 +186,13 @@ header {
         font-size: 20px;
         text-align: left;
         margin: 0;
+    }
+    .language-selector {
+        margin-right: 10px;
+    }
+
+    .language-selector select {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
