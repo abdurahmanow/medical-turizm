@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="header.title">Turism medical</title>
+    <link rel="icon" href="img/medical-history.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/derection.css">
+    <link rel="stylesheet" href="css/foter.css">
+    <link rel="stylesheet" href="css/steps.css">
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo" data-translate-key="header.title">Turism medical</div>
+            <div class="contacts" id="contacts">
+                <div class="contact-info">
+                    <a href="tel:+380952502180" class="phone">+38(095)25-02-180</a>
+                    <a href="https://wa.me/+380952502180" class="contact-icon" data-title="WhatsApp">
+                        <img src="img/whatsapp-h.png" alt="">
+                    </a>
+                    <a href="https://t.me/tourizmedical" class="contact-icon" data-title="Telegram">
+                        <img src="img/telegram-h.png" alt="">
+                    </a>
+                </div>
+
+                <!-- Selector limbă -->
+                <div class="language-selector">
+                    <select id="language-switcher" onchange="changeLanguage(this.value)">
+                        <option value="ua">UA</option>
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                        <option value="tr">TR</option>
+                        <option value="pl">PL</option>
+                        <option value="de">DE</option>
+                        <option value="ro" selected>RO</option>
+                    </select>
+                </div>
+
+                <button id="contact-button" data-translate-key="contact-us">Contactați-ne</button>
+                <div id="toast-container" class="toast-container"></div>
+            </div>
+        </div>
+    </header> 
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2 data-translate-key="popup.title">Trimiteți o cerere</h2>
+            <form id="contact-form">
+                <div class="field-wrapper">
+                    <label for="name" data-translate-key="popup.name">Nume</label>
+                    <input type="text" id="name" placeholder="Nume" maxlength="50">
+                </div>
+                
+                <div class="field-wrapper phone-wrapper">
+                    <label for="phone" data-translate-key="popup.phone">Număr de telefon</label>
+                    <input type="tel" id="phone" placeholder="+123456789" maxlength="16" required>
+                </div>
+    
+                <div class="field-wrapper">
+                    <label for="direction" data-translate-key="popup.direction">Domeniu</label>
+                    <select id="direction" required onchange="updateDirectionText()">
+                        <option value="" data-translate-key="popup.direction.placeholder">Alegeți domeniul</option>
+                        <option value="option1" data-translate-key="directions.list.0">Transplant de păr</option>
+                        <option value="option2" data-translate-key="directions.list.1">Stomatologie</option>
+                        <option value="option3" data-translate-key="directions.list.2">Oftalmologie</option>
+                        <option value="option4" data-translate-key="directions.list.3">Ginecologie/Urologie</option>
+                        <option value="option5" data-translate-key="directions.list.4">Chirurgie bariatrică</option>
+                        <option value="option6" data-translate-key="directions.list.5">Neurochirurgie</option>
+                        <option value="option7" data-translate-key="directions.list.6">Oncologie (Onco-ortopedie)</option>
+                        <option value="option8" data-translate-key="directions.list.7">Oncologie pediatrică</option>
+                        <option value="option9" data-translate-key="directions.list.8">Diabet</option>
+                        <option value="option10" data-translate-key="directions.list.9">Check-up general</option>
+                        <option value="option11" data-translate-key="directions.list.10">Check-up general</option>
+                        <option value="option12" data-translate-key="directions.list.11">Ortopedie</option>
+                    </select>
+                </div>
+                
+                <!-- Câmp ascuns pentru textul domeniului -->
+                <input type="hidden" id="directionText" name="directionText">                
+    
+                <button id="submitBtn" disabled data-translate-key="popup.submit">Trimite</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h1 data-translate-key="hero.title">Organizarea și suportul complet al tratamentului în cele mai bune clinici din Turcia</h1>
+        <p data-translate-key="hero.subtitle">Suntem experți în turismul medical din Turcia, colaborăm cu clinici de top și medici de talie mondială pentru a vă oferi tratamente de calitate și rezultate excelente.</p>
+        
+        <a href="#" class="cta-button" id="open-popup" data-translate-key="hero.cta">Consultație gratuită</a>
+      
+        <div class="icons-wrapper">
+            <div class="icon" data-translate-key="hero.icons.0">Combinarea tratamentului cu odihna</div>
+            <div class="icon" data-translate-key="hero.icons.1">Medici din Turcia, Europa și CSI</div>
+            <div class="icon" data-translate-key="hero.icons.2">Peste 4 ani de experiență</div>
+            <div class="icon" data-translate-key="hero.icons.3">Peste 1000 de pacienți</div>
+        </div>
+    </div>      
+    
+    <section id="derection" class="directions-container">
+        <div class="directions">
+            <h2 data-translate-key="directions.title">Principalele domenii alese de pacienții noștri</h2>
+            <p data-translate-key="directions.description">Lucrăm cu cele mai bune clinici și găsim soluții pentru orice situație — de la proceduri bine standardizate la tratamente experimentale pentru boli rare.</p>
+            <div class="directions-grid">
+                <div class="direction-item" data-translate-key="directions.list.0">Transplant de păr</div>
+                <div class="direction-item" data-translate-key="directions.list.1">Stomatologie</div>
+                <div class="direction-item" data-translate-key="directions.list.2">Oftalmologie</div>
+                <div class="direction-item" data-translate-key="directions.list.3">Ginecologie/Urologie</div>
+                <div class="direction-item" data-translate-key="directions.list.4">Chirurgie bariatrică</div>
+                <div class="direction-item" data-translate-key="directions.list.5">Neurochirurgie</div>
+                <div class="direction-item" data-translate-key="directions.list.6">Oncologie (Onco-ortopedie)</div>
+                <div class="direction-item" data-translate-key="directions.list.7">Oncologie pediatrică</div>
+                <div class="direction-item" data-translate-key="directions.list.8">Diabet</div>
+                <div class="direction-item" data-translate-key="directions.list.9">Check-up general</div>
+                <div class="direction-item" data-translate-key="directions.list.10">Pediatrie</div>
+                <div class="direction-item" data-translate-key="directions.list.11">Ortopedie</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="steps-section">
+        <h2 data-translate-key="steps.title">Etapele prestării serviciului</h2>
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-number">01</div>
+                <div class="step-icon">
+                    <img src="img/genetic-counseling.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.0">Consultație inițială în cadrul căreia primim rezultatele analizelor și răspundem la toate întrebările.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">02</div>
+                <div class="step-icon">
+                    <img src="img/monitor.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.1">Pe baza rezultatelor, medicul stabilește diagnosticul și prescrie tratamentul.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">03</div>
+                <div class="step-icon">
+                    <img src="img/hospital.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.2">Alegem clinica și programul de tratament în funcție de bugetul dvs.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">04</div>
+                <div class="step-icon">
+                    <img src="img/appointment.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.3">Stabilim data sosirii și organizăm cazarea.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">05</div>
+                <div class="step-icon">
+                    <img src="img/transporting.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.4">Vă întâmpinăm la aeroport și vă conducem la clinică.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">06</div>
+                <div class="step-icon">
+                    <img src="img/surgery-room.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.5">Pregătirea pentru intervenție.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">07</div>
+                <div class="step-icon">
+                    <img src="img/phonendoscope.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.6">Control postoperator și recomandări pentru recuperare.</p>
+            </div>
+            <div class="step-item highlighted">
+                <div class="step-number">08</div>
+                <div class="step-icon">
+                    <img src="img/consultation.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.7">Suport 24/7 pe WhatsApp după întoarcerea acasă.</p>
+            </div>
+        </div>
+    </section> 
+
+    <section id="faq" class="faq-section">
+        <h2 data-translate-key="faq.title">Răspundem la întrebări frecvente</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.0">
+                    De ce tocmai Turcia?
+                    <span class="faq-icon">⬆</span>
+                </button>
+                <div class="faq-answer active" data-translate-key="faq.answers.0">
+                    Turcia oferă tratamente de calitate la costuri mai mici comparativ cu Europa,
+                    SUA și Israel. Unele intervenții sunt cu până la 90% mai ieftine decât în alte țări.
+                    Infrastructura și instituțiile medicale corespund standardelor internaționale. În plus,
+                    Turcia combină servicii medicale profesionale cu oportunități excelente de relaxare.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.1">
+                    Cum se calculează costul tratamentului?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.1">
+                    Costul depinde de programul de tratament. Oferim mai multe opțiuni de clinici, pe diferite niveluri de preț.
+                    De asemenea, prețul depinde de serviciile suplimentare (cazare, organizarea timpului liber etc.).
+                    Prețul final va fi comunicat de manager după primirea tuturor informațiilor inițiale.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.2">
+                    Există garanții pentru tratament?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.2">
+                    Toți pacienții noștri sunt asigurați și beneficiază de protecție juridică.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.3">
+                    Ce echipamente sunt folosite în clinici?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.3">
+                    Colaborăm cu clinici care folosesc echipamente avansate, de înaltă tehnologie.
+                    Puteți verifica dotările specifice ale instituției medicale pe site-ul clinicii.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.4">
+                    Este posibil un diagnostic la distanță?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.4">
+                    Traducem rezultatele analizelor în limba turcă, iar medicul stabilește diagnosticul și alege planul de tratament pe baza acestora.
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h2 data-translate-key="footer.logo">MedicalTourism</h2>
+                    <p data-translate-key="footer.description">Fiecare pacient are dreptul la tratament de calitate.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://t.me/tourizmedical" class="telegram" data-title="Telegram"><img src="img/telegram.png" alt=""></a>
+                    <a href="https://wa.me/+380952502180" class="whatsapp" data-title="WhatsApp"><img src="img/whatsapp.png" alt=""></a>
+                </div>
+            </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4 data-translate-key="footer.navigation.title">Navigare</h4>
+                <ul>
+                    <li><a href="#steps" data-translate-key="footer.navigation.steps">Etapele prestării serviciilor</a></li>
+                    <li><a href="#derection" data-translate-key="footer.navigation.directions">Domenii</a></li>
+                    <li><a href="#faq" data-translate-key="footer.navigation.faq">Întrebări frecvente</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Domenii</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.0">Transplant de păr</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.1">Stomatologie</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.2">Oftalmologie</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.3">Check-up general</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Domenii</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.4">Chirurgie bariatrică</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.5">Neurochirurgie</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.6">Diabet</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.7">Pediatrie</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Domenii</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.8">Oncologie</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.9">Ginecologie/Urologie</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.10">Ortopedie</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.11">Oncologie pediatrică</a></li>
+                </ul>
+            </div>
+        </div>        
+    </footer>
+
+    <script src="js/translation.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/faq.js"></script>
+    <script>
+function changeLanguage(lang) {
+    switch(lang) {
+        case "ru":
+            window.location.href = "index.ru.html";
+            break;
+        case "en":
+            window.location.href = "index.en.html";
+            break;
+        case "tr":
+            window.location.href = "index.tr.html";
+            break;
+        case "pl":
+            window.location.href = "index.pl.html";
+            break;
+        case "de":
+            window.location.href = "index.de.html";
+            break;
+        case "ro":
+            window.location.href = "index.ro.html";
+            break;
+        case "ro":
+            window.location.href = "index.ro.html";
+            break;
+        default:
+            window.location.href = "index.html"; // Ucraineană
+    }
+}
+</script>
+
+</body>
+</html>

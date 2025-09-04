@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="header.title">Sağlık turizmi</title>
+    <link rel="icon" href="img/medical-history.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/derection.css">
+    <link rel="stylesheet" href="css/foter.css">
+    <link rel="stylesheet" href="css/steps.css">
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo" data-translate-key="header.title">Sağlık turizmi</div>
+            <div class="contacts" id="contacts">
+                <div class="contact-info">
+                    <a href="tel:+380952502180" class="phone">+38(095)25-02-180</a>
+                    <a href="https://wa.me/+380952502180" class="contact-icon" data-title="WhatsApp">
+                        <img src="img/whatsapp-h.png" alt="">
+                    </a>
+                    <a href="https://t.me/tourizmedical" class="contact-icon" data-title="Telegram">
+                        <img src="img/telegram-h.png" alt="">
+                    </a>
+                </div>
+
+                <!-- Dil seçimi -->
+                <div class="language-selector">
+                    <select id="language-switcher" onchange="changeLanguage(this.value)">
+                        <option value="ua">UA</option>
+                        <option value="ru">RU</option>
+                        <option value="en">EN</option>
+                        <option value="tr" selected>TR</option>
+                        <option value="pl">PL</option>
+                        <option value="de">DE</option>
+                        <option value="ro">RO</option>
+                    </select>
+                </div>
+
+                <button id="contact-button" data-translate-key="contact-us">Bizimle iletişime geçin</button>
+                <div id="toast-container" class="toast-container"></div>
+            </div>
+        </div>
+    </header> 
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2 data-translate-key="popup.title">Başvuru bırakın</h2>
+            <form id="contact-form">
+                <div class="field-wrapper">
+                    <label for="name" data-translate-key="popup.name">İsim</label>
+                    <input type="text" id="name" placeholder="İsim" maxlength="50">
+                </div>
+                
+                <div class="field-wrapper phone-wrapper">
+                    <label for="phone" data-translate-key="popup.phone">Telefon numarası</label>
+                    <input type="tel" id="phone" placeholder="+123456789" maxlength="16" required>
+                </div>
+    
+                <div class="field-wrapper">
+                    <label for="direction" data-translate-key="popup.direction">Alan</label>
+                    <select id="direction" required onchange="updateDirectionText()">
+                        <option value="" data-translate-key="popup.direction.placeholder">Alan seçin</option>
+                        <option value="option1" data-translate-key="directions.list.0">Saç ekimi</option>
+                        <option value="option2" data-translate-key="directions.list.1">Diş hekimliği</option>
+                        <option value="option3" data-translate-key="directions.list.2">Göz hastalıkları (Oftalmoloji)</option>
+                        <option value="option4" data-translate-key="directions.list.3">Jinekoloji/Üroloji</option>
+                        <option value="option5" data-translate-key="directions.list.4">Bariatrik cerrahi</option>
+                        <option value="option6" data-translate-key="directions.list.5">Beyin ve sinir cerrahisi (Nöroşirürji)</option>
+                        <option value="option7" data-translate-key="directions.list.6">Onkoloji (Onko-ortopedi)</option>
+                        <option value="option8" data-translate-key="directions.list.7">Pediatrik onkoloji</option>
+                        <option value="option9" data-translate-key="directions.list.8">Diyabet</option>
+                        <option value="option10" data-translate-key="directions.list.9">Check-up (Genel tarama)</option>
+                        <option value="option11" data-translate-key="directions.list.10">Check-up (Genel tarama)</option>
+                        <option value="option12" data-translate-key="directions.list.11">Ortopedi</option>
+                    </select>
+                </div>
+                
+                <!-- Alan metni için gizli alan -->
+                <input type="hidden" id="directionText" name="directionText">                
+    
+                <button id="submitBtn" disabled data-translate-key="popup.submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h1 data-translate-key="hero.title">Türkiye'nin en iyi kliniklerinde tedavinin organizasyonu ve tam destek</h1>
+        <p data-translate-key="hero.subtitle">Türkiye'de sağlık turizmi konusunda uzmanız; kaliteli tedavi ve sonuçlar sunmak için önde gelen klinikler ve dünya çapında doktorlarla çalışıyoruz.</p>
+        
+        <a href="#" class="cta-button" id="open-popup" data-translate-key="hero.cta">Ücretsiz danışma</a>
+      
+        <div class="icons-wrapper">
+            <div class="icon" data-translate-key="hero.icons.0">Tedavi ve tatil bir arada</div>
+            <div class="icon" data-translate-key="hero.icons.1">Türkiye, Avrupa ve BDT'den doktorlar</div>
+            <div class="icon" data-translate-key="hero.icons.2">4+ yıl deneyim</div>
+            <div class="icon" data-translate-key="hero.icons.3">1000+ hasta</div>
+        </div>
+    </div>      
+    
+    <section id="derection" class="directions-container">
+        <div class="directions">
+            <h2 data-translate-key="directions.title">Hastalarımızın en çok tercih ettiği alanlar</h2>
+            <p data-translate-key="directions.description">En iyi kliniklerle çalışıyor ve her durum için çözümler buluyoruz — kanıtlanmış, yüksek standartlı prosedürlerden nadir hastalıkların deneysel tedavilerine kadar.</p>
+            <div class="directions-grid">
+                <div class="direction-item" data-translate-key="directions.list.0">Saç ekimi</div>
+                <div class="direction-item" data-translate-key="directions.list.1">Diş hekimliği</div>
+                <div class="direction-item" data-translate-key="directions.list.2">Göz hastalıkları (Oftalmoloji)</div>
+                <div class="direction-item" data-translate-key="directions.list.3">Jinekoloji/Üroloji</div>
+                <div class="direction-item" data-translate-key="directions.list.4">Bariatrik cerrahi</div>
+                <div class="direction-item" data-translate-key="directions.list.5">Beyin ve sinir cerrahisi</div>
+                <div class="direction-item" data-translate-key="directions.list.6">Onkoloji (Onko-ortopedi)</div>
+                <div class="direction-item" data-translate-key="directions.list.7">Pediatrik onkoloji</div>
+                <div class="direction-item" data-translate-key="directions.list.8">Diyabet</div>
+                <div class="direction-item" data-translate-key="directions.list.9">Check-up (Genel tarama)</div>
+                <div class="direction-item" data-translate-key="directions.list.10">Çocuk sağlığı</div>
+                <div class="direction-item" data-translate-key="directions.list.11">Ortopedi</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="steps-section">
+        <h2 data-translate-key="steps.title">Hizmet sunum aşamaları</h2>
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-number">01</div>
+                <div class="step-icon">
+                    <img src="img/genetic-counseling.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.0">Tüm tetkik sonuçlarınızı aldığımız ve tüm sorularınızı yanıtladığımız ilk danışma.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">02</div>
+                <div class="step-icon">
+                    <img src="img/monitor.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.1">Sonuçlara göre doktor tanı koyar ve tedaviyi planlar.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">03</div>
+                <div class="step-icon">
+                    <img src="img/hospital.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.2">Bütçenize uygun klinik ve tedavi programını seçiyoruz.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">04</div>
+                <div class="step-icon">
+                    <img src="img/appointment.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.3">Geliş tarihini netleştiriyor ve konaklamayı ayarlıyoruz.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">05</div>
+                <div class="step-icon">
+                    <img src="img/transporting.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.4">Sizi havaalanında karşılıyor ve kliniğe götürüyoruz.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">06</div>
+                <div class="step-icon">
+                    <img src="img/surgery-room.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.5">Ameliyata hazırlık.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">07</div>
+                <div class="step-icon">
+                    <img src="img/phonendoscope.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.6">Ameliyat sonrası takip ve iyileşme önerileri.</p>
+            </div>
+            <div class="step-item highlighted">
+                <div class="step-number">08</div>
+                <div class="step-icon">
+                    <img src="img/consultation.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.7">Eve dönüşten sonra 7/24 WhatsApp desteği.</p>
+            </div>
+        </div>
+    </section> 
+
+    <section id="faq" class="faq-section">
+        <h2 data-translate-key="faq.title">Sık sorulan soruları yanıtlıyoruz</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.0">
+                    Neden özellikle Türkiye?
+                    <span class="faq-icon">⬆</span>
+                </button>
+                <div class="faq-answer active" data-translate-key="faq.answers.0">
+                    Türkiye, Avrupa, ABD ve İsrail'e kıyasla daha düşük maliyetlerle yüksek kaliteli tedavi sunar.
+                    Bazı ameliyatlar diğer ülkelere göre %90'a kadar daha ucuzdur.
+                    Altyapı ve sağlık kuruluşları uluslararası standartları karşılar. Ayrıca
+                    Türkiye, profesyonel tıbbi hizmetleri olağanüstü tatil imkânlarıyla birleştirir.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.1">
+                    Tedavi maliyeti nasıl hesaplanır?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.1">
+                    Maliyet, tedavi programına bağlıdır. Farklı fiyat aralıklarında birkaç klinik seçeneği sunuyoruz.
+                    Ayrıca ücret, ek hizmetlere (konaklama, tatil organizasyonu vb.) göre değişir.
+                    Tüm başlangıç bilgileri alındıktan sonra nihai ücreti yöneticimiz iletir.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.2">
+                    Tedavi için garanti var mı?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.2">
+                    Tüm hastalarımız sigortalıdır ve yasal korumaya sahiptir.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.3">
+                    Kliniklerde hangi ekipmanlar kullanılıyor?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.3">
+                    Yüksek teknolojiye sahip ileri ekipmanlar kullanan kliniklerle çalışıyoruz.
+                    İlgili sağlık kuruluşunun donanımını kliniğin web sitesinden detaylı inceleyebilirsiniz.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.4">
+                    Uzaktan tanı koymak mümkün mü?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.4">
+                    Tetkik sonuçlarınızı Türkçeye çeviriyor, doktor bu sonuçlara göre tanı koyup tedavi planını belirliyor.
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h2 data-translate-key="footer.logo">MedicalTourism</h2>
+                    <p data-translate-key="footer.description">Her hastanın kaliteli tedavi hakkı vardır.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://t.me/tourizmedical" class="telegram" data-title="Telegram"><img src="img/telegram.png" alt=""></a>
+                    <a href="https://wa.me/+380952502180" class="whatsapp" data-title="WhatsApp"><img src="img/whatsapp.png" alt=""></a>
+                </div>
+            </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4 data-translate-key="footer.navigation.title">Gezinme</h4>
+                <ul>
+                    <li><a href="#steps" data-translate-key="footer.navigation.steps">Hizmet sunum aşamaları</a></li>
+                    <li><a href="#derection" data-translate-key="footer.navigation.directions">Alanlar</a></li>
+                    <li><a href="#faq" data-translate-key="footer.navigation.faq">SSS</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Alanlar</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.0">Saç ekimi</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.1">Diş hekimliği</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.2">Göz hastalıkları</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.3">Check-up</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Alanlar</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.4">Bariatrik cerrahi</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.5">Beyin ve sinir cerrahisi</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.6">Diyabet</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.7">Çocuk sağlığı</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Alanlar</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.8">Onkoloji</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.9">Jinekoloji/Üroloji</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.10">Ortopedi</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.11">Pediatrik onkoloji</a></li>
+                </ul>
+            </div>
+        </div>        
+    </footer>
+
+    <script src="js/translation.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/faq.js"></script>
+    <script>
+function changeLanguage(lang) {
+    switch(lang) {
+        case "ru":
+            window.location.href = "index.ru.html";
+            break;
+        case "en":
+            window.location.href = "index.en.html";
+            break;
+        case "tr":
+            window.location.href = "index.tr.html";
+            break;
+        case "pl":
+            window.location.href = "index.pl.html";
+            break;
+        case "de":
+            window.location.href = "index.de.html";
+            break;
+        case "ro":
+            window.location.href = "index.ro.html";
+            break;
+        default:
+            window.location.href = "index.html"; // Ukraynaca
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="header.title">Medical Tourism</title>
+    <link rel="icon" href="img/medical-history.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/derection.css">
+    <link rel="stylesheet" href="css/foter.css">
+    <link rel="stylesheet" href="css/steps.css">
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo" data-translate-key="header.title">Medical Tourism</div>
+            <div class="contacts" id="contacts">
+                <div class="contact-info">
+                    <a href="tel:+380952502180" class="phone">+38(095)25-02-180</a>
+                    <a href="https://wa.me/+380952502180" class="contact-icon" data-title="WhatsApp">
+                        <img src="img/whatsapp-h.png" alt="">
+                    </a>
+                    <a href="https://t.me/tourizmedical" class="contact-icon" data-title="Telegram">
+                        <img src="img/telegram-h.png" alt="">
+                    </a>
+                </div>
+
+                <!-- Language dropdown -->
+                <div class="language-selector">
+                    <select id="language-switcher" onchange="changeLanguage(this.value)">
+                        <option value="ua">UA</option>
+                        <option value="ru">RU</option>
+                        <option value="en" selected>EN</option>
+                        <option value="tr">TR</option>
+                        <option value="pl">PL</option>
+                        <option value="de">DE</option>
+                        <option value="ro">RO</option>
+                    </select>
+                </div>
+
+                <button id="contact-button" data-translate-key="contact-us">Contact us</button>
+                <div id="toast-container" class="toast-container"></div>
+            </div>
+        </div>
+    </header> 
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2 data-translate-key="popup.title">Submit a request</h2>
+            <form id="contact-form">
+                <div class="field-wrapper">
+                    <label for="name" data-translate-key="popup.name">Name</label>
+                    <input type="text" id="name" placeholder="Name" maxlength="50">
+                </div>
+                
+                <div class="field-wrapper phone-wrapper">
+                    <label for="phone" data-translate-key="popup.phone">Phone number</label>
+                    <input type="tel" id="phone" placeholder="+123456789" maxlength="16" required>
+                </div>
+    
+                <div class="field-wrapper">
+                    <label for="direction" data-translate-key="popup.direction">Direction</label>
+                    <select id="direction" required onchange="updateDirectionText()">
+                        <option value="" data-translate-key="popup.direction.placeholder">Choose a direction</option>
+                        <option value="option1" data-translate-key="directions.list.0">Hair transplantation</option>
+                        <option value="option2" data-translate-key="directions.list.1">Dentistry</option>
+                        <option value="option3" data-translate-key="directions.list.2">Ophthalmology</option>
+                        <option value="option4" data-translate-key="directions.list.3">Gynecology/Urology</option>
+                        <option value="option5" data-translate-key="directions.list.4">Bariatric surgery</option>
+                        <option value="option6" data-translate-key="directions.list.5">Neurosurgery</option>
+                        <option value="option7" data-translate-key="directions.list.6">Oncology (Onco-orthopedics)</option>
+                        <option value="option8" data-translate-key="directions.list.7">Pediatric oncology</option>
+                        <option value="option9" data-translate-key="directions.list.8">Diabetes</option>
+                        <option value="option10" data-translate-key="directions.list.9">Full body check-up</option>
+                        <option value="option11" data-translate-key="directions.list.10">Full body check-up</option>
+                        <option value="option12" data-translate-key="directions.list.11">Orthopedics</option>
+                    </select>
+                </div>
+                
+                <!-- Hidden field for direction text -->
+                <input type="hidden" id="directionText" name="directionText">                
+    
+                <button id="submitBtn" disabled data-translate-key="popup.submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h1 data-translate-key="hero.title">Organization and full support of treatment in the best clinics of Turkey</h1>
+        <p data-translate-key="hero.subtitle">We are experts in medical tourism in Turkey, partnering with leading clinics and world-class doctors to provide you with quality treatment and results.</p>
+        
+        <a href="#" class="cta-button" id="open-popup" data-translate-key="hero.cta">Free consultation</a>
+      
+        <div class="icons-wrapper">
+            <div class="icon" data-translate-key="hero.icons.0">Combining treatment and leisure</div>
+            <div class="icon" data-translate-key="hero.icons.1">Doctors from Turkey, Europe, and the CIS</div>
+            <div class="icon" data-translate-key="hero.icons.2">Over 4 years of experience</div>
+            <div class="icon" data-translate-key="hero.icons.3">More than 1000 clients</div>
+        </div>
+    </div>      
+    
+    <section id="derection" class="directions-container">
+        <div class="directions">
+            <h2 data-translate-key="directions.title">Main directions chosen by our patients</h2>
+            <p data-translate-key="directions.description">We work with the best clinics and find solutions for any issues — from proven, highly standardized procedures to experimental treatments for rare diseases.</p>
+            <div class="directions-grid">
+                <div class="direction-item" data-translate-key="directions.list.0">Hair transplantation</div>
+                <div class="direction-item" data-translate-key="directions.list.1">Dentistry</div>
+                <div class="direction-item" data-translate-key="directions.list.2">Ophthalmology</div>
+                <div class="direction-item" data-translate-key="directions.list.3">Gynecology/Urology</div>
+                <div class="direction-item" data-translate-key="directions.list.4">Bariatric surgery</div>
+                <div class="direction-item" data-translate-key="directions.list.5">Neurosurgery</div>
+                <div class="direction-item" data-translate-key="directions.list.6">Oncology (Onco-orthopedics)</div>
+                <div class="direction-item" data-translate-key="directions.list.7">Pediatric oncology</div>
+                <div class="direction-item" data-translate-key="directions.list.8">Diabetes</div>
+                <div class="direction-item" data-translate-key="directions.list.9">Full body check-up</div>
+                <div class="direction-item" data-translate-key="directions.list.10">Pediatrics</div>
+                <div class="direction-item" data-translate-key="directions.list.11">Orthopedics</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="steps-section">
+        <h2 data-translate-key="steps.title">Service delivery stages</h2>
+        <div class="steps-grid">
+            <div class="step-item">
+                <div class="step-number">01</div>
+                <div class="step-icon">
+                    <img src="img/genetic-counseling.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.0">Initial consultation where we receive your test results and answer all your questions.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">02</div>
+                <div class="step-icon">
+                    <img src="img/monitor.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.1">Based on the results, the doctor makes a diagnosis and prescribes treatment.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">03</div>
+                <div class="step-icon">
+                    <img src="img/hospital.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.2">We select a clinic and treatment program according to your budget.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">04</div>
+                <div class="step-icon">
+                    <img src="img/appointment.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.3">We agree on the arrival date and arrange accommodation.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">05</div>
+                <div class="step-icon">
+                    <img src="img/transporting.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.4">We meet you at the airport and take you to the clinic.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">06</div>
+                <div class="step-icon">
+                    <img src="img/surgery-room.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.5">Preparation for surgery.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-number">07</div>
+                <div class="step-icon">
+                    <img src="img/phonendoscope.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.6">Postoperative monitoring and recovery recommendations.</p>
+            </div>
+            <div class="step-item highlighted">
+                <div class="step-number">08</div>
+                <div class="step-icon">
+                    <img src="img/consultation.png" alt="">
+                </div>
+                <p data-translate-key="steps.list.7">24/7 WhatsApp support after you return home.</p>
+            </div>
+        </div>
+    </section> 
+
+    <section id="faq" class="faq-section">
+        <h2 data-translate-key="faq.title">Frequently asked questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.0">
+                    Why Turkey?
+                    <span class="faq-icon">⬆</span>
+                </button>
+                <div class="faq-answer active" data-translate-key="faq.answers.0">
+                    Turkey offers high-quality treatment at lower costs compared to Europe,
+                    the USA, and Israel. Some surgeries are up to 90 percent cheaper than in other countries.
+                    Infrastructure and medical facilities meet international standards. In addition,
+                    Turkey combines professional medical services with exceptional leisure opportunities.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.1">
+                    How to estimate the cost of treatment?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.1">
+                    The cost depends on the treatment program. We offer several clinic options in different price ranges.
+                    The price also depends on additional services (accommodation, leisure arrangements, etc.).
+                    The manager will provide the final cost after receiving all the initial information.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.2">
+                    Are there any guarantees for treatment?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.2">
+                    All our patients are insured and have legal protection.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.3">
+                    What equipment is used in the clinics?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.3">
+                    We work with clinics that use advanced high-tech equipment.
+                    You can check the specific equipment of a medical facility on the clinic’s website.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)" data-translate-key="faq.questions.4">
+                    Is it possible to make a diagnosis remotely?
+                    <span class="faq-icon">⬇</span>
+                </button>
+                <div class="faq-answer" data-translate-key="faq.answers.4">
+                    We translate your test results into Turkish, and the doctor makes a diagnosis and selects a treatment plan based on them.
+                </div>
+            </div>
+        </div>
+    </section>   
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <h2 data-translate-key="footer.logo">MedicalTourism</h2>
+                    <p data-translate-key="footer.description">Every patient has the right to quality treatment.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://t.me/tourizmedical" class="telegram" data-title="Telegram"><img src="img/telegram.png" alt=""></a>
+                    <a href="https://wa.me/+380952502180" class="whatsapp" data-title="WhatsApp"><img src="img/whatsapp.png" alt=""></a>
+                    <!-- <a href="viber://chat?number=%2B380952502180" class="viber" data-title="Viber"><img src="img/viber.png" alt=""></a> -->
+                   <!-- <a href="#" class="mail" data-title="Gmail"><img src="img/mail.png" alt=""></a> -->
+                </div>
+            </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h4 data-translate-key="footer.navigation.title">Navigation</h4>
+                <ul>
+                    <li><a href="#steps" data-translate-key="footer.navigation.steps">Service delivery stages</a></li>
+                    <li><a href="#derection" data-translate-key="footer.navigation.directions">Directions</a></li>
+                    <li><a href="#faq" data-translate-key="footer.navigation.faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Directions</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.0">Hair transplantation</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.1">Dentistry</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.2">Ophthalmology</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.3">Full body check-up</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Directions</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.4">Bariatric surgery</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.5">Neurosurgery</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.6">Diabetes</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.7">Pediatrics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4 data-translate-key="footer.directions.title">Directions</h4>
+                <ul>
+                    <li><a href="#" data-translate-key="footer.directions.list.8">Oncology</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.9">Gynecology/Urology</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.10">Orthopedics</a></li>
+                    <li><a href="#" data-translate-key="footer.directions.list.11">Pediatric oncology</a></li>
+                </ul>
+            </div>
+        </div>        
+    </footer>
+
+    <script src="js/translation.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/faq.js"></script>
+    <script>
+function changeLanguage(lang) {
+    switch(lang) {
+        case "ru":
+            window.location.href = "index.ru.html";
+            break;
+        case "en":
+            window.location.href = "index.en.html";
+            break;
+        case "tr":
+            window.location.href = "index.tr.html";
+            break;
+        case "pl":
+            window.location.href = "index.pl.html";
+            break;
+        case "de":
+            window.location.href = "index.de.html";
+            break;
+        case "ro":
+            window.location.href = "index.ro.html";
+            break;
+        default:
+            window.location.href = "index.html"; // Ukrainian
+    }
+}
+</script>
+
+</body>
+</html>
