@@ -9,7 +9,8 @@ contactButton.addEventListener('click', () => {
 });
 
 // Добавляем обработчик для второй кнопки
-openPopupButton.addEventListener('click', () => {
+openPopupButton.addEventListener('click', (e) => {
+    e.preventDefault();
     popup.style.display = 'flex';
 });
 
@@ -20,102 +21,97 @@ closePopup.addEventListener('click', () => {
 
 // Закрыть pop-up при клике вне его области
 window.addEventListener('click', (e) => {
-    if (e.target == popup) {
+    if (e.target === popup) {
         popup.style.display = 'none';
     }
 });
 
-// Функция для проверки, заполнены ли все поля
+/* ---------- Универсальная валидация телефона ---------- */
+/** Санитизация: оставляем только цифры и один '+' в начале */
+function sanitizePhone(input) {
+    let v = input.replace(/[^\d+]/g, '');         // только цифры и '+'
+    if (v.includes('+')) v = '+' + v.replace(/\+/g, ''); // только один '+' в начале
+    // ограничиваем максимум 15 цифр (по E.164)
+    const digits = v.replace(/\D/g, '').slice(0, 15);
+    return (v.startsWith('+') ? '+' : '') + digits;
+}
+
+/** Проверка формата: опционально '+', 7–15 цифр */
+function isValidPhone(v) {
+    return /^\+?\d{7,15}$/.test(v);
+}
+
+/* ---------- Проверка заполненности формы ---------- */
 function checkFormCompletion() {
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const direction = document.getElementById('direction').value;
     const submitBtn = document.getElementById('submitBtn');
 
-    // Проверяем, что все поля заполнены
-    if (name && phone.length === 10 && direction !== '') {
-        submitBtn.disabled = false;
-        submitBtn.classList.add('active'); // Меняем цвет кнопки
-    } else {
-        submitBtn.disabled = true;
-        submitBtn.classList.remove('active'); // Возвращаем неактивное состояние
-    }
+    const valid = name && isValidPhone(phone) && direction !== '';
+    submitBtn.disabled = !valid;
+    submitBtn.classList.toggle('active', valid);
 }
 
-// Ограничиваем ввод только цифр в поле телефона и добавляем валидацию
+/* ---------- Обработчики инпутов ---------- */
+// Телефон: только цифры и опционально '+' в начале, длина до 15 цифр
 document.getElementById('phone').addEventListener('input', function (e) {
-    const phoneInput = e.target;
-    const value = phoneInput.value.replace(/\D/g, ''); // Удаляем все нецифровые символы
-    const isValidStart = value.startsWith('0'); // Проверяем, начинается ли номер с 0
-
-    if (!isValidStart) {
-        phoneInput.value = ''; // Если не начинается с 0, очищаем поле
-    } else if (value.length <= 10) {
-        phoneInput.value = value; // Оставляем только цифры и до 9 символов
-    }
-    checkFormCompletion(); // Проверяем форму
+    const sanitized = sanitizePhone(e.target.value);
+    if (e.target.value !== sanitized) e.target.value = sanitized;
+    checkFormCompletion();
 });
 
-// Запрещаем ввод цифр в поле имени
+// Имя: запрещаем цифры
 document.getElementById('name').addEventListener('input', function (e) {
     const nameInput = e.target;
-    nameInput.value = nameInput.value.replace(/\d/g, ''); // Убираем цифры
-    checkFormCompletion(); // Проверяем форму
+    const cleaned = nameInput.value.replace(/\d/g, '');
+    if (nameInput.value !== cleaned) nameInput.value = cleaned;
+    checkFormCompletion();
 });
 
-// Следим за изменениями в поле "Направление"
-document.getElementById('direction').addEventListener('change', function () {
-    checkFormCompletion(); // Проверяем форму
-});
+// Направление
+document.getElementById('direction').addEventListener('change', checkFormCompletion);
 
-// Действие при клике на кнопку отправки
+/* ---------- Поведение кнопки Отправить ---------- */
 document.getElementById('submitBtn').addEventListener('click', function (e) {
-    const phone = document.getElementById('phone').value;
-    if (phone.length !== 10) {
-        alert('Введите корректный номер телефона (0XX-XX-XX-XXX).');
-        e.preventDefault(); // Останавливаем отправку формы
+    const phone = document.getElementById('phone').value.trim();
+    if (!isValidPhone(phone)) {
+        alert('Введите корректный номер телефона (только цифры, можно с +, 7–15 цифр).');
+        e.preventDefault();
     } else {
-        // Отправка данных в Телеграм
-        console.log('Форма отправлена');
+        // Отправка обработается обработчиком submit ниже
+        // console.log('Кнопка нажата, форма будет отправлена');
     }
 });
 
+/* ---------- Отправка формы в Telegram ---------- */
 document.getElementById('contact-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const submitButton = document.getElementById('submitBtn');
-    const popup = document.getElementById('popup'); // Получаем pop-up
-
     if (submitButton.disabled) return;
 
     submitButton.disabled = true;
     submitButton.textContent = 'Отправка...';
 
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim(); // уже универсальный формат
     const direction = document.getElementById('directionText').value;
 
     const botToken = '7273500669:AAGOade_TuXW51wxTMp516kLI_UDf-xkOO8';
     const chatId = '-1001963011260';
-    const message = `Новая заявка:\nИмя: ${name}\nТелефон: +38${phone}\nНаправление: ${direction}`;
+    const message = `Новая заявка:\nИмя: ${name}\nТелефон: ${phone}\nНаправление: ${direction}`;
 
     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: message })
     })
     .then(response => response.json())
     .then(data => {
         if (data.ok) {
             showToast('Заявка успешно отправлена!');
             document.getElementById('contact-form').reset();
-
-            // Закрытие pop-up после успешной отправки
             popup.style.display = 'none';
         } else {
             showToast('Ошибка отправки заявки.');
@@ -130,29 +126,23 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     });
 });
 
-// Функция для показа уведомления
+/* ---------- Toast ---------- */
 function showToast(message) {
     const toastContainer = document.getElementById('toast-container');
     const toast = document.createElement('div');
     toast.classList.add('toast');
     toast.textContent = message;
-    
     toastContainer.appendChild(toast);
     toastContainer.style.display = 'block';
-
-    // Удаляем уведомление через 5 секунд
     setTimeout(() => {
         toast.remove();
-        if (toastContainer.children.length === 0) {
-            toastContainer.style.display = 'none';
-        }
+        if (!toastContainer.children.length) toastContainer.style.display = 'none';
     }, 5000);
 }
 
+/* ---------- Скрытое поле для текста направления ---------- */
 function updateDirectionText() {
     const directionSelect = document.getElementById('direction');
     const directionText = directionSelect.options[directionSelect.selectedIndex].text;
-
-    // Записываем текст выбранного направления в скрытое поле
     document.getElementById('directionText').value = directionText;
 }
